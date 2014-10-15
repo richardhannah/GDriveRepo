@@ -1,0 +1,147 @@
+﻿using UnityEngine;
+using System;
+using System.Collections.Generic;
+using Sfs2X;
+using Sfs2X.Core;
+using Sfs2X.Logging;
+
+public class ConnectionGUI : MonoBehaviour
+{
+	//----------------------------------------------------------
+	// Setup variables
+	//----------------------------------------------------------
+	public string serverName = "127.0.0.1";		// Use Unity Inspector to change this value
+	public int serverPort = 9933;				// Use Unity Inspector to change this value
+	public LogLevel logLevel = LogLevel.DEBUG;	// Use Unity Inspector to change this value
+	public GUISkin sfsSkin;
+	
+	private string statusMessage = "";
+	private SmartFox smartFox;
+	private List<string> logMessages = new List<string>();
+	private Vector2 logScrollPosition;	
+
+	//----------------------------------------------------------
+	// Called when program starts
+	//----------------------------------------------------------
+	void Start()
+	{
+		// In a webplayer (or editor in webplayer mode) we need to setup security policy negotiation with the server first
+		if (Application.isWebPlayer || Application.isEditor) {
+			if (!Security.PrefetchSocketPolicy(serverName, serverPort, 500)) {
+				Debug.LogError("Security Exception. Policy file loading failed!");
+			}
+		}		
+
+		// Register for basic callbacks
+		smartFox = new SmartFox(true);
+		smartFox.AddEventListener(SFSEvent.CONNECTION, OnConnection);
+		smartFox.AddEventListener(SFSEvent.CONNECTION_LOST, OnConnectionLost);
+		
+		// Also register for all debug messages from the API at the given log level
+		smartFox.AddLogListener(logLevel, OnDebugMessage);
+		
+		statusMessage = "Not connected (client API v" + smartFox.Version + ")";
+		logMessages.Add("LOG MESSAGES");
+	}
+	
+	//----------------------------------------------------------
+	// As Unity is not thread safe, we process the queued up callbacks every physics tick
+	//----------------------------------------------------------
+	void FixedUpdate() {
+		smartFox.ProcessEvents();
+	}
+	
+	//----------------------------------------------------------
+	// Draw GUI every frame
+	//----------------------------------------------------------
+
+	void OnGUI() {
+		if (smartFox == null) return;
+
+		GUI.skin = sfsSkin;
+		
+		// Lets just quickly set up some GUI layout variables
+		float panelWidth = 400;
+		float panelHeight = 300;
+		float panelPosX = Screen.width/2 - panelWidth/2;
+		float panelPosY = Screen.height/2 - panelHeight/2;
+		
+		// Draw the box
+		GUILayout.BeginArea(new Rect(panelPosX, panelPosY, panelWidth, panelHeight));
+		GUILayout.Box ("Connector", GUILayout.ExpandWidth(true), GUILayout.ExpandHeight(true));
+		GUILayout.BeginVertical();
+		GUILayout.BeginArea(new Rect(20, 25, panelWidth-40, panelHeight-100), GUI.skin.customStyles[0]);
+
+		// Show server log inside
+		logScrollPosition = GUILayout.BeginScrollView(logScrollPosition, false, false);
+		
+		foreach (string message in logMessages) {
+			GUILayout.Label(message);
+		}
+		
+		GUILayout.EndScrollView();
+		GUILayout.EndArea ();		
+		
+		GUILayout.BeginArea(new Rect(20, panelHeight-70, panelWidth-40, 80));
+		
+		// Display client status
+		GUIStyle centeredLabelStyle = new GUIStyle(GUI.skin.label);
+		centeredLabelStyle.alignment = TextAnchor.MiddleCenter;
+		
+		GUILayout.Label("Client status: " + statusMessage, centeredLabelStyle);
+		
+		// Center button
+		GUILayout.BeginHorizontal();
+		GUILayout.FlexibleSpace();		
+		if (!smartFox.IsConnected) {
+			// Connect button
+			if (GUILayout.Button("CONNECT")) {
+				smartFox.Connect(serverName, serverPort);
+			}
+		}
+		else {
+			// Show disconnect button
+			if (GUILayout.Button("DISCONNECT")) {
+				smartFox.Disconnect();
+			}
+		}
+		GUILayout.FlexibleSpace();
+		GUILayout.EndHorizontal();
+		
+		GUILayout.EndArea ();		
+		GUILayout.EndVertical();
+		GUILayout.EndArea ();
+	}
+
+	//----------------------------------------------------------
+	// Handle connection response from server
+	//----------------------------------------------------------
+	public void OnConnection(BaseEvent evt) {
+		bool success = (bool)evt.Params["success"];
+		if (success) {
+			statusMessage = "Connection successful!";
+		} else {
+			statusMessage = "Can't connect to server!";
+		}
+	}
+
+	public void OnConnectionLost(BaseEvent evt) {
+		statusMessage = "Connection lost; reason: " + (string)evt.Params["reason"];
+	}
+	
+	//----------------------------------------------------------
+	// Show the debug messages both in window as well as console log
+	//----------------------------------------------------------
+	public void OnDebugMessage(BaseEvent evt) {
+		string message = (string)evt.Params["message"];
+		logMessages.Add(message);
+		Debug.Log("[SFS DEBUG] " + message);
+	}
+	
+	//----------------------------------------------------------
+	// Disconnect from the socket when shutting down the game
+	//----------------------------------------------------------
+	public void OnApplicationQuit() {
+		smartFox.Disconnect();
+	}
+}

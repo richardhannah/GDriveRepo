@@ -1,0 +1,7 @@
+C:\Users\richard\Google Drive\vs2010projects\RobbieRedux\RobbieRedux\obj\x86\Debug\RobbieRedux.csprojResolveAssemblyReference.cache
+C:\Users\richard\Google Drive\vs2010projects\RobbieRedux\RobbieRedux\bin\Debug\RobbieRedux.exe
+C:\Users\richard\Google Drive\vs2010projects\RobbieRedux\RobbieRedux\bin\Debug\RobbieRedux.pdb
+C:\Users\richard\Google Drive\vs2010projects\RobbieRedux\RobbieRedux\bin\Debug\Graphicgrid.dll
+C:\Users\richard\Google Drive\vs2010projects\RobbieRedux\RobbieRedux\bin\Debug\Robby.dll
+C:\Users\richard\Google Drive\vs2010projects\RobbieRedux\RobbieRedux\obj\x86\Debug\RobbieRedux.exe
+C:\Users\richard\Google Drive\vs2010projects\RobbieRedux\RobbieRedux\obj\x86\Debug\RobbieRedux.pdb

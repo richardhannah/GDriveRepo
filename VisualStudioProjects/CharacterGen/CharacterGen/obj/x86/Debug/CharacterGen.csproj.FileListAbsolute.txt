@@ -1,0 +1,12 @@
+C:\Users\Ailsa\Google Drive\vs2010projects\CharacterGen\CharacterGen\bin\Debug\CharacterGen.exe.config
+C:\Users\Ailsa\Google Drive\vs2010projects\CharacterGen\CharacterGen\bin\Debug\CharacterGen.exe
+C:\Users\Ailsa\Google Drive\vs2010projects\CharacterGen\CharacterGen\bin\Debug\CharacterGen.pdb
+C:\Users\Ailsa\Google Drive\vs2010projects\CharacterGen\CharacterGen\bin\Debug\RFHGdriveLib.dll
+C:\Users\Ailsa\Google Drive\vs2010projects\CharacterGen\CharacterGen\bin\Debug\RFHGdriveLib.pdb
+C:\Users\Ailsa\Google Drive\vs2010projects\CharacterGen\CharacterGen\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Ailsa\Google Drive\vs2010projects\CharacterGen\CharacterGen\obj\x86\Debug\CharacterGen.Form1.resources
+C:\Users\Ailsa\Google Drive\vs2010projects\CharacterGen\CharacterGen\obj\x86\Debug\CharacterGen.Properties.Resources.resources
+C:\Users\Ailsa\Google Drive\vs2010projects\CharacterGen\CharacterGen\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\Ailsa\Google Drive\vs2010projects\CharacterGen\CharacterGen\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\Ailsa\Google Drive\vs2010projects\CharacterGen\CharacterGen\obj\x86\Debug\CharacterGen.exe
+C:\Users\Ailsa\Google Drive\vs2010projects\CharacterGen\CharacterGen\obj\x86\Debug\CharacterGen.pdb

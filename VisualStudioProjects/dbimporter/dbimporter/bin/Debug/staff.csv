@@ -1,0 +1,16 @@
+snum;surname;jobtitle;super;sex;joindate;division;salary;bonus
+3016;Brock;Secretary;3414;F;30508;10;12288;NULL
+3107;Hamilton;Salesman;3200;M;30298;20;18534;4500
+3200;Raines;Manager;3812;F;29403;20;25872;500
+3215;Tringham;Clerk;3200;M;29661;20;9384;NULL
+3365;Hughes;Accountant;3414;M;30637;10;23760;NULL
+3407;Macrae;Secretary;3926;F;30298;10;16200;NULL
+3414;Welham;Manager;3813;M;31950;10;25872;NULL
+3488;Styles;Clerk;3365;F;30286;10;8652;NULL
+3698;French;Consultant;3788;M;29312;30;20184;0
+3724;Adye;Consultant;3788;M;25504;30;29400;825
+3788;Kumar;Manager;3813;M;27435;30;30816;1586
+3812;Khan;Director;3926;M;30299;20;42000;950
+3813;Bate;Director;3926;F;25678;10;46752;NULL
+3926;Towlson;Chairman;NULL;F;30928;10;45816;NULL
+3989;Bray;Consultant;3788;M;26931;30;18000;825

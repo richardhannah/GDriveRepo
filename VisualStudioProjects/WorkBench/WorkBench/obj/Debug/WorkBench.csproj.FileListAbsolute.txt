@@ -1,0 +1,5 @@
+C:\Users\richard\Google Drive\VisualStudioProjects\WorkBench\WorkBench\bin\Debug\WorkBench.exe.config
+C:\Users\richard\Google Drive\VisualStudioProjects\WorkBench\WorkBench\bin\Debug\WorkBench.exe
+C:\Users\richard\Google Drive\VisualStudioProjects\WorkBench\WorkBench\bin\Debug\WorkBench.pdb
+C:\Users\richard\Google Drive\VisualStudioProjects\WorkBench\WorkBench\obj\Debug\WorkBench.exe
+C:\Users\richard\Google Drive\VisualStudioProjects\WorkBench\WorkBench\obj\Debug\WorkBench.pdb

@@ -1,0 +1,7 @@
+C:\Users\richard\Google Drive\VisualStudioProjects\SmartFoxTesting\SmartFoxTesting\bin\Debug\SmartFoxTesting.exe.config
+C:\Users\richard\Google Drive\VisualStudioProjects\SmartFoxTesting\SmartFoxTesting\bin\Debug\SmartFoxTesting.exe
+C:\Users\richard\Google Drive\VisualStudioProjects\SmartFoxTesting\SmartFoxTesting\bin\Debug\SmartFoxTesting.pdb
+C:\Users\richard\Google Drive\VisualStudioProjects\SmartFoxTesting\SmartFoxTesting\obj\Debug\SmartFoxTesting.csprojResolveAssemblyReference.cache
+C:\Users\richard\Google Drive\VisualStudioProjects\SmartFoxTesting\SmartFoxTesting\obj\Debug\SmartFoxTesting.exe
+C:\Users\richard\Google Drive\VisualStudioProjects\SmartFoxTesting\SmartFoxTesting\obj\Debug\SmartFoxTesting.pdb
+C:\Users\richard\Google Drive\VisualStudioProjects\SmartFoxTesting\SmartFoxTesting\bin\Debug\SmartFox2X.dll

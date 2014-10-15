@@ -1,0 +1,7 @@
+C:\Users\richard\Google Drive\VisualStudioProjects\GeneticAlgorithm1\GeneticAlgorithm1\bin\Debug\GeneticAlgorithm1.exe.config
+C:\Users\richard\Google Drive\VisualStudioProjects\GeneticAlgorithm1\GeneticAlgorithm1\bin\Debug\GeneticAlgorithm1.exe
+C:\Users\richard\Google Drive\VisualStudioProjects\GeneticAlgorithm1\GeneticAlgorithm1\bin\Debug\GeneticAlgorithm1.pdb
+C:\Users\richard\Google Drive\VisualStudioProjects\GeneticAlgorithm1\GeneticAlgorithm1\obj\Debug\GeneticAlgorithm1.csprojResolveAssemblyReference.cache
+C:\Users\richard\Google Drive\VisualStudioProjects\GeneticAlgorithm1\GeneticAlgorithm1\obj\Debug\GeneticAlgorithm1.exe
+C:\Users\richard\Google Drive\VisualStudioProjects\GeneticAlgorithm1\GeneticAlgorithm1\obj\Debug\GeneticAlgorithm1.pdb
+C:\Users\richard\Google Drive\VisualStudioProjects\GeneticAlgorithm1\GeneticAlgorithm1\bin\Debug\NCalc.dll

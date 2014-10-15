@@ -1,0 +1,16 @@
+C:\Users\Ailsa\Google Drive\vs2010projects\RFHGdriveLib\RFHGdriveLib\bin\Debug\RFHGdriveLib.dll
+C:\Users\Ailsa\Google Drive\vs2010projects\RFHGdriveLib\RFHGdriveLib\bin\Debug\RFHGdriveLib.pdb
+C:\Users\Ailsa\Google Drive\vs2010projects\RFHGdriveLib\RFHGdriveLib\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Ailsa\Google Drive\vs2010projects\RFHGdriveLib\RFHGdriveLib\obj\Debug\RFHGdriveLib.dll
+C:\Users\Ailsa\Google Drive\vs2010projects\RFHGdriveLib\RFHGdriveLib\obj\Debug\RFHGdriveLib.pdb
+C:\Users\Ailsa\Google Drive\vs2010projects\RFHGdriveLib\RFHGdriveLib\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Ailsa\Google Drive\vs2010projects\RFHGdriveLib\RFHGdriveLib\bin\Debug\Newtonsoft.Json.pdb
+C:\Users\Ailsa\Google Drive\vs2010projects\RFHGdriveLib\RFHGdriveLib\bin\Debug\Newtonsoft.Json.xml
+C:\Users\richard\Google Drive\vs2010projects\RFHGdriveLib\RFHGdriveLib\obj\Debug\RFHGdriveLib.dll
+C:\Users\richard\Google Drive\vs2010projects\RFHGdriveLib\RFHGdriveLib\obj\Debug\RFHGdriveLib.pdb
+C:\Users\richard\Google Drive\vs2010projects\RFHGdriveLib\RFHGdriveLib\bin\Debug\RFHGdriveLib.dll
+C:\Users\richard\Google Drive\vs2010projects\RFHGdriveLib\RFHGdriveLib\bin\Debug\RFHGdriveLib.pdb
+C:\Users\richard\Google Drive\vs2010projects\RFHGdriveLib\RFHGdriveLib\bin\Debug\Newtonsoft.Json.dll
+C:\Users\richard\Google Drive\vs2010projects\RFHGdriveLib\RFHGdriveLib\bin\Debug\Newtonsoft.Json.pdb
+C:\Users\richard\Google Drive\vs2010projects\RFHGdriveLib\RFHGdriveLib\bin\Debug\Newtonsoft.Json.xml
+C:\Users\richard\Google Drive\vs2010projects\RFHGdriveLib\RFHGdriveLib\obj\Debug\RFHGdriveLib.csprojResolveAssemblyReference.cache

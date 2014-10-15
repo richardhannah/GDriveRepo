@@ -1,0 +1,4 @@
+C:\Users\richard\Google Drive\vs2010projects\Revision\Revision\bin\Debug\Revision.exe
+C:\Users\richard\Google Drive\vs2010projects\Revision\Revision\bin\Debug\Revision.pdb
+C:\Users\richard\Google Drive\vs2010projects\Revision\Revision\obj\x86\Debug\Revision.exe
+C:\Users\richard\Google Drive\vs2010projects\Revision\Revision\obj\x86\Debug\Revision.pdb

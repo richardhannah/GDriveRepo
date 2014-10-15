@@ -1,0 +1,6 @@
+C:\Users\Ailsa\Google Drive\vs2010projects\TestConsole\TestConsole\bin\Release\TestConsole.exe
+C:\Users\Ailsa\Google Drive\vs2010projects\TestConsole\TestConsole\bin\Release\TestConsole.pdb
+C:\Users\Ailsa\Google Drive\vs2010projects\TestConsole\TestConsole\obj\x86\Release\ResolveAssemblyReference.cache
+C:\Users\Ailsa\Google Drive\vs2010projects\TestConsole\TestConsole\obj\x86\Release\TestConsole.exe
+C:\Users\Ailsa\Google Drive\vs2010projects\TestConsole\TestConsole\obj\x86\Release\TestConsole.pdb
+C:\Users\Ailsa\Google Drive\vs2010projects\TestConsole\TestConsole\bin\Release\TestConsole.exe.config

@@ -1,0 +1,6 @@
+C:\Users\richard\Google Drive\VisualStudioProjects\RubeGoldberg\RubeGoldberg\bin\Debug\RubeGoldberg.exe.config
+C:\Users\richard\Google Drive\VisualStudioProjects\RubeGoldberg\RubeGoldberg\bin\Debug\RubeGoldberg.exe
+C:\Users\richard\Google Drive\VisualStudioProjects\RubeGoldberg\RubeGoldberg\bin\Debug\RubeGoldberg.pdb
+C:\Users\richard\Google Drive\VisualStudioProjects\RubeGoldberg\RubeGoldberg\obj\Debug\RubeGoldberg.csprojResolveAssemblyReference.cache
+C:\Users\richard\Google Drive\VisualStudioProjects\RubeGoldberg\RubeGoldberg\obj\Debug\RubeGoldberg.exe
+C:\Users\richard\Google Drive\VisualStudioProjects\RubeGoldberg\RubeGoldberg\obj\Debug\RubeGoldberg.pdb

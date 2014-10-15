@@ -1,0 +1,5 @@
+C:\Users\richard\Google Drive\vs2010projects\dbimporter\dbimporter\bin\Debug\dbimporter.exe
+C:\Users\richard\Google Drive\vs2010projects\dbimporter\dbimporter\bin\Debug\dbimporter.pdb
+C:\Users\richard\Google Drive\vs2010projects\dbimporter\dbimporter\bin\Debug\MySql.Data.dll
+C:\Users\richard\Google Drive\vs2010projects\dbimporter\dbimporter\obj\x86\Debug\dbimporter.exe
+C:\Users\richard\Google Drive\vs2010projects\dbimporter\dbimporter\obj\x86\Debug\dbimporter.pdb

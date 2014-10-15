@@ -1,0 +1,8 @@
+C:\Users\Ailsa\Google Drive\vs2010projects\RFHGdriveLib\RFHGdriveLib\bin\Release\RFHGdriveLib.dll
+C:\Users\Ailsa\Google Drive\vs2010projects\RFHGdriveLib\RFHGdriveLib\bin\Release\RFHGdriveLib.pdb
+C:\Users\Ailsa\Google Drive\vs2010projects\RFHGdriveLib\RFHGdriveLib\obj\Release\ResolveAssemblyReference.cache
+C:\Users\Ailsa\Google Drive\vs2010projects\RFHGdriveLib\RFHGdriveLib\obj\Release\RFHGdriveLib.dll
+C:\Users\Ailsa\Google Drive\vs2010projects\RFHGdriveLib\RFHGdriveLib\obj\Release\RFHGdriveLib.pdb
+C:\Users\Ailsa\Google Drive\vs2010projects\RFHGdriveLib\RFHGdriveLib\bin\Release\Newtonsoft.Json.dll
+C:\Users\Ailsa\Google Drive\vs2010projects\RFHGdriveLib\RFHGdriveLib\bin\Release\Newtonsoft.Json.pdb
+C:\Users\Ailsa\Google Drive\vs2010projects\RFHGdriveLib\RFHGdriveLib\bin\Release\Newtonsoft.Json.xml

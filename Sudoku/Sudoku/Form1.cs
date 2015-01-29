@@ -152,6 +152,7 @@ namespace Sudoku
             {
                 
                 string contents = File.ReadAllText(fileSelect.FileName);
+                lblPuzzleName.Text = fileSelect.FileName;
                 Debug.WriteLine(contents);
                 int[,] resultArray = JsonConvert.DeserializeObject<int[,]>(contents);
                 //JArray desArray = JsonConvert.DeserializeObject<JArray>(contents);
@@ -161,9 +162,24 @@ namespace Sudoku
                 
             }
             
+        }  
+
+        private void btnAnalyze_Click(object sender, EventArgs e)
+        {
+            basicAnalysis();
+            advancedAnalysis();
+
         }
 
-       
+        private void basicAnalysis()
+        {
+            lblBaseDifficulty.Text = "bleh";
+        }
+
+        private void advancedAnalysis()
+        {
+            lblModDiff.Text = "blah";
+        }
 
     }
 }

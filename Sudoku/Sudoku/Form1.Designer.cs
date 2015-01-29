@@ -112,6 +112,12 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.loadPuzzleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnAnalyze = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lblBaseDifficulty = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.lblModDiff = new System.Windows.Forms.Label();
+            this.lblPuzzleName = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -703,15 +709,76 @@
             // loadPuzzleToolStripMenuItem
             // 
             this.loadPuzzleToolStripMenuItem.Name = "loadPuzzleToolStripMenuItem";
-            this.loadPuzzleToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.loadPuzzleToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
             this.loadPuzzleToolStripMenuItem.Text = "Load Puzzle";
             this.loadPuzzleToolStripMenuItem.Click += new System.EventHandler(this.loadPuzzleToolStripMenuItem_Click);
+            // 
+            // btnAnalyze
+            // 
+            this.btnAnalyze.Location = new System.Drawing.Point(499, 178);
+            this.btnAnalyze.Name = "btnAnalyze";
+            this.btnAnalyze.Size = new System.Drawing.Size(75, 23);
+            this.btnAnalyze.TabIndex = 82;
+            this.btnAnalyze.Text = "Analyze";
+            this.btnAnalyze.UseVisualStyleBackColor = true;
+            this.btnAnalyze.Click += new System.EventHandler(this.btnAnalyze_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(471, 238);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(74, 13);
+            this.label1.TabIndex = 83;
+            this.label1.Text = "Basic difficulty";
+            // 
+            // lblBaseDifficulty
+            // 
+            this.lblBaseDifficulty.AutoSize = true;
+            this.lblBaseDifficulty.Location = new System.Drawing.Point(567, 238);
+            this.lblBaseDifficulty.Name = "lblBaseDifficulty";
+            this.lblBaseDifficulty.Size = new System.Drawing.Size(32, 13);
+            this.lblBaseDifficulty.TabIndex = 84;
+            this.lblBaseDifficulty.Text = "result";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(471, 267);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(90, 13);
+            this.label3.TabIndex = 85;
+            this.label3.Text = "Modified Difficulty";
+            // 
+            // lblModDiff
+            // 
+            this.lblModDiff.AutoSize = true;
+            this.lblModDiff.Location = new System.Drawing.Point(567, 267);
+            this.lblModDiff.Name = "lblModDiff";
+            this.lblModDiff.Size = new System.Drawing.Size(32, 13);
+            this.lblModDiff.TabIndex = 86;
+            this.lblModDiff.Text = "result";
+            // 
+            // lblPuzzleName
+            // 
+            this.lblPuzzleName.AutoSize = true;
+            this.lblPuzzleName.Location = new System.Drawing.Point(148, 67);
+            this.lblPuzzleName.Name = "lblPuzzleName";
+            this.lblPuzzleName.Size = new System.Drawing.Size(66, 13);
+            this.lblPuzzleName.TabIndex = 87;
+            this.lblPuzzleName.Text = "puzzle name";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(676, 522);
+            this.Controls.Add(this.lblPuzzleName);
+            this.Controls.Add(this.lblModDiff);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.lblBaseDifficulty);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.btnAnalyze);
             this.Controls.Add(this.cell79);
             this.Controls.Add(this.cell80);
             this.Controls.Add(this.cell81);
@@ -890,6 +957,12 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem loadPuzzleToolStripMenuItem;
+        private System.Windows.Forms.Button btnAnalyze;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblBaseDifficulty;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblModDiff;
+        private System.Windows.Forms.Label lblPuzzleName;
 
 
     }

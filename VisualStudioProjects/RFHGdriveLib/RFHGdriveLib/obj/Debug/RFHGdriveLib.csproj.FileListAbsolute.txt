@@ -14,3 +14,6 @@ C:\Users\richard\Google Drive\vs2010projects\RFHGdriveLib\RFHGdriveLib\bin\Debug
 C:\Users\richard\Google Drive\vs2010projects\RFHGdriveLib\RFHGdriveLib\bin\Debug\Newtonsoft.Json.pdb
 C:\Users\richard\Google Drive\vs2010projects\RFHGdriveLib\RFHGdriveLib\bin\Debug\Newtonsoft.Json.xml
 C:\Users\richard\Google Drive\vs2010projects\RFHGdriveLib\RFHGdriveLib\obj\Debug\RFHGdriveLib.csprojResolveAssemblyReference.cache
+C:\Users\richard\Google Drive\GitHub\GDriveRepo\VisualStudioProjects\RFHGdriveLib\RFHGdriveLib\obj\Debug\RFHGdriveLib.csprojResolveAssemblyReference.cache
+C:\Users\richard\Google Drive\GitHub\GDriveRepo\VisualStudioProjects\RFHGdriveLib\RFHGdriveLib\obj\Debug\RFHGdriveLib.dll
+C:\Users\richard\Google Drive\GitHub\GDriveRepo\VisualStudioProjects\RFHGdriveLib\RFHGdriveLib\obj\Debug\RFHGdriveLib.pdb

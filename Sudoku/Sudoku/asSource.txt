@@ -1,0 +1,589 @@
+﻿package
+{
+	import flash.events.Event;
+	import flash.text.TextField;
+	
+	import flashx.textLayout.tlf_internal;
+	
+	import mx.charts.AreaChart;
+	import mx.core.mx_internal;
+	import mx.utils.object_proxy;
+
+	public class Sudclass
+	{
+		import mx.events.FlexEvent;
+		import spark.events.TextOperationEvent;
+		import spark.components.TextInput;
+		import spark.components.Label;
+		import mx.controls.Alert;
+		import flash.errors.StackOverflowError;
+		
+		
+		
+		
+		public function Sudclass()
+		{
+		}
+		
+		
+		public function Cleargrid(event:Event):void
+		{
+			var callingItem:Object = new TextInput;
+			callingItem = event.currentTarget;
+			callingItem.text = "";
+		}
+		
+		private function singleSol(gridData:Object,cellLocations:Array):Object
+		{
+			var solvedthisIteration: int = 0;
+			
+			for each (var cell: int in cellLocations){
+				
+				if (numSolutions(cell,gridData) == 1){
+					
+					var theSolution:Array = getSolutions(cell,gridData);
+					gridData[cell] = theSolution[0];
+					solvedthisIteration++;
+				}
+				
+			}
+			
+			
+			
+			if (solvedthisIteration == 0){
+				//apply some additonal logic
+				gridData = checkRows(gridData,cellLocations);
+				cellLocations = getEmptyCells(gridData);
+				gridData = checkCols(gridData,cellLocations);
+				cellLocations = getEmptyCells(gridData);
+				gridData = checkSectors(gridData,cellLocations);
+				cellLocations = getEmptyCells(gridData);
+				
+				//check one last time before exiting
+				for each(var ce:int in cellLocations){
+					if (numSolutions(ce,gridData)==1){
+						singleSol(gridData,cellLocations);
+					}
+				}
+				
+				return gridData;
+			}
+			else if (evalGrid(gridData) < 81){
+				
+				
+				singleSol(gridData,cellLocations);
+			}
+			
+			
+			return gridData;
+		}
+		
+		public function evalGrid(gridData:Object):int
+		{
+			var solved: int = 0;
+			
+			for(var x:int = 0; x < 81; x++){
+				if(gridData[x] > 0){
+					solved++;
+					
+				}
+			}
+			
+			return solved;
+		}
+		
+		
+		public function checkRows(gridData:Object,cellLocations:Array):Object
+		{
+			for (var i:int = 0; i<9; i++){
+				//trace("--------------");
+				//trace("checking row" + i);
+				var solCheck:Array = [0,0,0,0,0,0,0,0,0,0];
+				for each(var cell:int in cellLocations){
+					if(Math.floor(cell/9) == i){
+						//trace("cell " + cell + " is in row" + i);
+						var sols:Array = getSolutions(cell,gridData);
+						for each (var s: int in sols){
+							solCheck[s]++;
+						}
+						for each (var sc:int in solCheck){
+							//trace("solcheck" + sc);
+						}
+					}
+				}
+				//trace("-----------------");
+				for each (var check:int in solCheck){
+					//trace("checking solcheck position" + solCheck.indexOf(check))
+					if (check == 1){
+						//trace("single solution found");
+						for each(var cell2:int in cellLocations){
+							//trace("checking solutions for " + solCheck.indexOf(check));
+							if(Math.floor(cell2/9) == i){
+								var sols2:Array = getSolutions(cell2,gridData);
+								//trace("checking cell " + cell2);
+								for each (var s2: int in sols2){
+									if (s2 == solCheck.indexOf(check)){
+										gridData[cell2] = solCheck.indexOf(check);
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+			return gridData;
+		}
+		
+		public function checkCols(gridData:Object,cellLocations:Array):Object
+		{
+			for (var i:int = 0; i<9; i++){
+				//trace("--------------");
+				//trace("checking col " + i);
+				var solCheck:Array = [0,0,0,0,0,0,0,0,0,0];
+				for each(var cell:int in cellLocations){
+					var rNum: int = Math.floor(cell/9);
+					if(cell - (rNum * 9) == i){
+						//trace("cell " + cell + " is in col" + i);
+						var sols:Array = getSolutions(cell,gridData);
+						for each (var s: int in sols){
+							solCheck[s]++;
+						}
+						for each (var sc:int in solCheck){
+							//trace("solcheck" + sc);
+						}
+					}
+				}
+				//trace("-----------------");
+				for each (var check:int in solCheck){
+					//trace("checking solcheck position" + solCheck.indexOf(check))
+					if (check == 1){
+						//trace("single solution found");
+						for each(var cell2:int in cellLocations){
+							//trace("checking solutions for " + solCheck.indexOf(check));
+							var rNum2: int = Math.floor(cell2/9);
+							if(cell2 - (rNum2 * 9) == i){
+								var sols2:Array = getSolutions(cell2,gridData);
+								//trace("checking cell " + cell2);
+								for each (var s2: int in sols2){
+									if (s2 == solCheck.indexOf(check)){
+										gridData[cell2] = solCheck.indexOf(check);
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+			return gridData;
+		}
+		
+		public function checkSectors(gridData:Object,cellLocations:Array):Object
+		{
+			for (var i:int = 0; i<9; i++){
+				//trace("--------------");
+				//trace("checking sect " + i);
+				var solCheck:Array = [0,0,0,0,0,0,0,0,0,0];
+				for each(var cell:int in cellLocations){
+					var rNum: int = Math.floor(cell/9);
+					var cNum:int = cell - (rNum * 9);
+					var sRowNum: int = rNum - (rNum % 3);
+					var sColNum: int = cNum - (cNum % 3);
+					var sectnum:int = ((sRowNum * 9) + sColNum)/3;
+					
+					if(sectnum == i){
+						//trace("cell " + cell + " is in sect" + i);
+						var sols:Array = getSolutions(cell,gridData);
+						for each (var s: int in sols){
+							solCheck[s]++;
+						}
+						for each (var sc:int in solCheck){
+							//trace("solcheck" + sc);
+						}
+					}
+				}
+				//trace("-----------------");
+				for each (var check:int in solCheck){
+					//trace("checking solcheck position" + solCheck.indexOf(check))
+					if (check == 1){
+						//trace("single solution found");
+						for each(var cell2:int in cellLocations){
+							//trace("checking solutions for " + solCheck.indexOf(check));
+							var rNum2: int = Math.floor(cell/9);
+							var cNum2:int = cell - (rNum * 9);
+							var sRowNum2: int = rNum - (rNum % 3);
+							var sColNum2: int = cNum - (cNum % 3);
+							var sectnum2:int = ((sRowNum * 9) + sColNum)/3;
+							if(sectnum2 == i){
+								var sols2:Array = getSolutions(cell2,gridData);
+								//trace("checking cell " + cell2);
+								for each (var s2: int in sols2){
+									if (s2 == solCheck.indexOf(check)){
+										gridData[cell2] = solCheck.indexOf(check);
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+			return gridData;
+		}
+		
+		
+		
+		
+		
+		public function errorCheck(gridData:Object,cellLocations:Array):Boolean
+		{
+			//update cells before testing
+			var testCells:Array = getEmptyCells(gridData);
+			
+			for each (var cell:int in testCells){
+				
+				if (numSolutions(cell,gridData) < 1){
+					return false;
+					trace("errors found");
+				}
+								
+			}
+			return true;
+			trace("no errors found");
+		}
+		
+		public function getEmptyCells(gridData:Object):Array
+		{
+			var cellLocs:Array = new Array;
+			var cellid:int = 0;
+			for each (var cell:int in gridData){
+				if (cell == 0)
+				{
+					cellLocs.push(cellid);
+				}
+				cellid++;
+			}
+			
+			return cellLocs;
+		}
+		
+		
+		public function orderCells(gridData:Object,cellLocations:Array):Array
+		{
+			
+			
+			var reOrdered:Array = new Array;
+			
+			for (var i:int = 0; i < 9; i++){
+				for each(var cell: int in cellLocations){
+					
+					if(numSolutions(cell, gridData)==i){
+						reOrdered.push(cell);
+					}
+					
+				}
+				
+			}
+			
+			for each(var cellx: int in reOrdered){
+				
+				var sols: int = numSolutions(cellx, gridData);
+				
+			}
+			
+			return reOrdered;
+		}
+		public function solveSudoku(gridData:Object):Object
+		{	
+			
+			//get the location of the Empty cells
+			var cellLocations:Array = getEmptyCells(gridData);
+			
+			// check for single solutions
+			gridData = singleSol(gridData,cellLocations);
+			cellLocations = getEmptyCells(gridData);
+			
+			//re-order the cells so lowest solutions are tried first
+			cellLocations = orderCells(gridData,cellLocations);
+			
+			
+			
+			if (evalGrid(gridData) < 81){
+				
+				//brute force the rest	
+				
+				
+				try{
+				gridData = multiSol(gridData,cellLocations,0);	
+				}
+				finally
+				{
+					return gridData;
+				}
+				
+					
+				
+				
+			}
+			
+			
+			return gridData;
+		}
+		
+		public function logicTest(gridData:Object,cellLocations:Array):Boolean
+		{
+			var testgridData:Object = gridData;
+			cellLocations = getEmptyCells(testgridData);
+			
+			//quick test first
+			if (errorCheck(testgridData,cellLocations) == false){
+				//trace("errors found");
+				return false;
+			}
+			else
+			{
+				
+				//apply logic and test again
+				testgridData = singleSol(testgridData,cellLocations);
+				
+				if (errorCheck(testgridData,cellLocations) == false){
+					//trace("errors found");
+					return false;
+				}
+				else
+				{
+					//trace("no errors found");
+					return true
+				}
+				
+			}
+			
+			
+		}
+		
+		public function multiSol(gridData:Object, cells:Array, p:int):Object
+		{
+			
+			
+			
+			if (evalGrid(gridData) < 81){
+				//trace("------------------");
+				
+				
+				
+				//trace("current cell: "+cells[p]);
+				
+				//check the value of the current cell and store it
+				
+				var storeVal: int = gridData[cells[p]];
+				//trace("current value: "+ storeVal);
+				
+				//reset the cell
+				
+				gridData[cells[p]] = 0;
+				
+				//test grid before going any further
+				if (errorCheck(gridData,cells)==false){
+					//trace("errors found");
+					p--;//backtrack
+					multiSol(gridData,cells,p);
+				}
+				
+				
+				//get the solutions for the cell
+				
+				var solutions:Array = getSolutions(cells[p],gridData);
+				
+				if (solutions.length > 0){
+					//if there are solutions available
+					//trace("solutions array length > 0: = true");
+					if (storeVal > 0){
+						//find out which solution was already being used
+						//trace("storeVal > 0: = true");
+						var solIndex:int = solutions.indexOf(storeVal);
+						//trace("index of storeVal in solutions:" + solIndex);
+						
+						solIndex++;
+						if (solIndex < solutions.length){
+							//trace("solutions still available");
+							//if there is another solution available then try it
+							
+							gridData[cells[p]] = solutions[solIndex];
+							//trace("trying: " + solutions[solIndex]);
+							
+							p++;//move forward
+							multiSol(gridData,cells,p);
+							
+						}
+						else
+						{
+							
+							//trace("no solutions left");
+							p--;//backtrack
+							multiSol(gridData,cells,p);
+						}
+						
+					}
+					else
+					{
+						//trace("storeVal > 0: = false");
+						//try the first solution
+						gridData[cells[p]] = solutions[0];
+						//trace("trying: " + solutions[0]);
+						
+						p++;//move forward
+						multiSol(gridData,cells,p);
+						
+						
+						
+					}
+					
+				}
+				else
+				{
+					//trace("no solutions available");
+					p--;//backtrack
+					multiSol(gridData,cells,p);	
+					
+				}
+				
+			}
+			
+			return gridData;
+				
+				
+				
+			
+			
+		}
+		
+		
+		
+		
+		
+		public function numSolutions(mycurrentGrid:int,gridData:Object):int
+		{
+			var numsolutions:int = 0;
+			
+			for (var i:int = 1; i <= 9; i++){
+				if (checkIt(mycurrentGrid,i,gridData)==true){
+					numsolutions++;
+					
+				}
+			}
+			
+			return numsolutions;
+		}
+		
+		
+		public function getSolutions(mycurrentGrid:int,gridData:Object):Array
+		{
+			var solutions:Array = new Array;
+			
+			for (var i:int = 1; i <= 9; i++){
+				if (checkIt(mycurrentGrid,i,gridData)==true){
+					solutions.push(i);
+					
+				}
+			}
+			
+			return solutions;
+		}
+									 
+									 
+									 
+									 
+		
+		public function checkIt(index:int,value:int,gridData:Object):Boolean
+		{
+			//find index row number
+			
+			var rownum:int = Math.floor(index/ 9);
+			
+			//find index col number
+			
+			var colnum:int = index - (rownum * 9);
+			
+			//find index sector number
+			
+			var sRowNum: int = rownum - (rownum % 3);
+			var sColNum: int = colnum - (colnum % 3);
+			
+			//check the row
+			
+			var instancesOfValue:int;
+			var i:int = rownum*9;
+			var j:int = i +9;
+			for (i=i; i < j; i++)
+			{
+				if (gridData[i] == value){
+					instancesOfValue++
+				}
+			}
+			
+			//check the column
+			
+			
+			var x:int;
+			for(x = colnum; x < 81; x = x+9)
+			{
+				if (gridData[x] == value){
+					instancesOfValue++
+				}
+			}
+			
+			
+			//check the sector
+			
+			var startpos: int;
+			
+			startpos = (sRowNum * 9) + sColNum;
+			
+			var si:int = startpos;
+			var sj:int = startpos+27;
+			for (si=si; si < sj; si=si+9)
+			{
+				for(var sx:int = si; sx < (si +3); sx++)
+				{
+					if (gridData[sx] == value){
+						instancesOfValue++
+					}
+				}
+			}
+			
+			
+			
+			if (instancesOfValue > 0){
+				return false;
+			}
+			else
+			{
+				return true;
+			}
+			
+		}
+		
+		
+		
+		
+		
+	
+		public function popGrid(gameData:Object, theGrid:Array):void
+		{
+			
+			
+			
+			for(var i:int = 0; i < 81 ; i++){
+				theGrid[i].enabled = true;
+				if(gameData[i] > 0){
+					theGrid[i].text = gameData[i];
+					theGrid[i].enabled = false;
+					
+					
+				}
+				else
+				{
+					theGrid[i].text = "";
+				}
+			}
+		}
+	}
+}

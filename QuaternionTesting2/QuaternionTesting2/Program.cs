@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Microsoft.Xna.Framework;
+using XnaGeometry;
 
-namespace QuaternionTesting
+namespace QuaternionTesting2
 {
     class Program
     {
@@ -13,7 +13,7 @@ namespace QuaternionTesting
         {
             Quaternion initialQ = CreateFromYawPitchRoll(0, 180, 0);
             Quaternion targetQ = new Quaternion(0, 0, 0, 1);
-            Quaternion errorQ = targetQ*Quaternion.Inverse(initialQ);
+            Quaternion errorQ = targetQ * Quaternion.Inverse(initialQ);
             Quaternion resultQ = errorQ * initialQ;
             //QTransition = QFinal * QInitial^{-1}
 
@@ -47,7 +47,7 @@ namespace QuaternionTesting
 
         //http://stackoverflow.com/questions/11492299/quaternion-to-euler-angles-algorithm-how-to-convert-to-y-up-and-between-ha
 
-        public static Quaternion CreateFromYawPitchRoll( float yaw, float pitch, float roll)
+        public static Quaternion CreateFromYawPitchRoll(float yaw, float pitch, float roll)
         {
             /*
              * The quaternion for the rotation by angle a about unit vector (x1,y1,z1) is given by:
@@ -107,7 +107,5 @@ namespace QuaternionTesting
 
 
         }
-
-
     }
 }

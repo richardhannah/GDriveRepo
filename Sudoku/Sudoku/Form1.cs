@@ -36,7 +36,6 @@ namespace Sudoku
         public Form1()
         {
             InitializeComponent();
-
             PopTextBoxList();
             populateGrid(gridData);
         }
@@ -179,6 +178,22 @@ namespace Sudoku
         private void advancedAnalysis()
         {
             lblModDiff.Text = "blah";
+            AnalyseSquare(new Point(0, 0));
+
+            
+
+
+        }
+
+        private void AnalyseSquare(Point square)
+        {
+            //check the row
+
+            for (int i = 0; i < 9; i++)
+            {
+                Debug.WriteLine("checking {0},{1}", square.X, i);
+            }
+
         }
 
     }

@@ -32,6 +32,7 @@ namespace Sudoku
         };
 
         List<TextBox> textBoxes = new List<TextBox>();
+        List<CellInfo> cellAnalyses = new List<CellInfo>();
 
         public Form1()
         {
@@ -40,7 +41,8 @@ namespace Sudoku
             populateGrid(gridData);
         }
 
-        private void populateGrid(int[,] data){
+        private void populateGrid(int[,] data)
+        {
 
             int textBoxCount = 0;
             for (int x = 0; x < 9; x++)
@@ -149,22 +151,24 @@ namespace Sudoku
 
             if (dResult == DialogResult.OK)
             {
-                
+
                 string contents = File.ReadAllText(fileSelect.FileName);
                 lblPuzzleName.Text = fileSelect.FileName;
                 Debug.WriteLine(contents);
-                int[,] resultArray = JsonConvert.DeserializeObject<int[,]>(contents);
+                gridData = JsonConvert.DeserializeObject<int[,]>(contents);
                 //JArray desArray = JsonConvert.DeserializeObject<JArray>(contents);
                 //int[,] resultArray = desArray.ToObject<int[,]>();
-                populateGrid(resultArray);
+                populateGrid(gridData);
 
-                
+
             }
-            
-        }  
+
+        }
 
         private void btnAnalyze_Click(object sender, EventArgs e)
         {
+            cellAnalyses.Clear();
+            
             basicAnalysis();
             advancedAnalysis();
 
@@ -178,21 +182,146 @@ namespace Sudoku
         private void advancedAnalysis()
         {
             lblModDiff.Text = "blah";
-            AnalyseSquare(new Point(0, 0));
 
-            
+            for (int x = 0; x < 9; x++)
+            {
+                for (int y = 0; y < 9; y++)
+                {
+
+                    Debug.WriteLine("Checking {0},{1} value is {2}", x, y, gridData[x, y]);
+                    AnalyseSquare(x, y);
+
+                }
+            }
+
+
+            DrawGraph();
+
+
+
+
+
+
 
 
         }
 
-        private void AnalyseSquare(Point square)
+        private void DrawGraph()
         {
-            //check the row
+            
 
-            for (int i = 0; i < 9; i++)
+            int[] graphData = new int[10] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+
+            foreach (CellInfo cInfo in cellAnalyses)
             {
-                Debug.WriteLine("checking {0},{1}", square.X, i);
+                Debug.WriteLine("Cell {0} {1} NumSolutions {2}", cInfo.Cell.X, cInfo.Cell.Y, cInfo.NumSolutions);
+                graphData[cInfo.NumSolutions]++;
+
             }
+
+            Graphics g = pnlGraph.CreateGraphics();
+            g.Clear(Color.White);
+            Pen graphPen = new Pen(Color.Black, 1);
+
+            for (int i = 0; i < 10; i++)
+            {
+                Debug.WriteLine("gdata {0}", graphData[i]);
+                g.DrawRectangle(graphPen, new Rectangle(10 + (30 * i), pnlGraph.Height - 10 - (graphData[i] * 5), 30, graphData[i] * 5));
+
+            }
+
+            int difficultyRating = 0;
+            for (int i = 0; i < 10; i++)
+            {
+                difficultyRating += i * graphData[i];
+            }
+            lblDifficulty.Text = difficultyRating.ToString();
+
+
+        }
+
+        private void AnalyseSquare(int row, int col)
+        {
+
+            
+
+            if (gridData[row, col] > 0)
+            {
+                cellAnalyses.Add(new CellInfo(new Point(row, col)));
+            }
+            else
+            {
+
+                List<int> arrSolutions = new List<int>{1,2,3,4,5,6,7,8,9};
+
+
+                //check the row
+                
+                    for (int y = 0; y < 9; y++)
+                    {
+                        //Debug.WriteLine("analysing {0} {1}", row, y);
+
+                        if (gridData[row,y] > 0 && arrSolutions.Contains(gridData[row, y]))
+                        {
+                            arrSolutions.Remove(gridData[row, y]);
+                        }
+                        
+                    }
+
+                //check the column
+
+                    for (int x = 0; x < 9; x++)
+                    {
+                       
+
+                        if (gridData[x, col] > 0 && arrSolutions.Contains(gridData[x,col]))
+                        {
+                            arrSolutions.Remove(gridData[x,col]);
+                        }
+
+                    }
+
+                //check the sector
+
+                    int sectorStartRow = (row / 3)*3 ;
+                    int sectorStartCol = (col / 3)*3 ;
+                    Debug.WriteLine("sectorStartRow {0}", sectorStartRow);
+
+                    for (int x = sectorStartRow; x < (sectorStartRow + 3); x++)
+                    {
+                        for (int y = sectorStartCol; y < (sectorStartCol + 3); y++)
+                        {
+                            if (gridData[x, y] > 0 && arrSolutions.Contains(gridData[x, y]))
+                            {
+                                arrSolutions.Remove(gridData[x, y]);
+                            }
+                        }
+                    }
+
+
+
+
+                cellAnalyses.Add(new CellInfo(new Point(row, col), arrSolutions));
+
+
+
+
+
+
+
+            }
+
+
+
+
+
+
+
+
+
+
+
+
 
         }
 

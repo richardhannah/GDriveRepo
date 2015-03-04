@@ -12,7 +12,7 @@ namespace QuadCopterClient
         static void Main(string[] args)
         {
 
-            Connect("127.0.0.1", "hello server");
+            Connect("192.168.0.7", "hello server");
 
 
         }

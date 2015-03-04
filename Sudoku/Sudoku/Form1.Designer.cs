@@ -118,572 +118,575 @@
             this.label3 = new System.Windows.Forms.Label();
             this.lblModDiff = new System.Windows.Forms.Label();
             this.lblPuzzleName = new System.Windows.Forms.Label();
+            this.pnlGraph = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lblDifficulty = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // cell1
             // 
-            this.cell1.Location = new System.Drawing.Point(196, 152);
+            this.cell1.Location = new System.Drawing.Point(43, 124);
             this.cell1.Name = "cell1";
             this.cell1.Size = new System.Drawing.Size(20, 20);
             this.cell1.TabIndex = 0;
             // 
             // cell2
             // 
-            this.cell2.Location = new System.Drawing.Point(222, 152);
+            this.cell2.Location = new System.Drawing.Point(69, 124);
             this.cell2.Name = "cell2";
             this.cell2.Size = new System.Drawing.Size(20, 20);
             this.cell2.TabIndex = 1;
             // 
             // cell3
             // 
-            this.cell3.Location = new System.Drawing.Point(248, 152);
+            this.cell3.Location = new System.Drawing.Point(95, 124);
             this.cell3.Name = "cell3";
             this.cell3.Size = new System.Drawing.Size(20, 20);
             this.cell3.TabIndex = 2;
             // 
             // cell4
             // 
-            this.cell4.Location = new System.Drawing.Point(283, 152);
+            this.cell4.Location = new System.Drawing.Point(130, 124);
             this.cell4.Name = "cell4";
             this.cell4.Size = new System.Drawing.Size(20, 20);
             this.cell4.TabIndex = 5;
             // 
             // cell5
             // 
-            this.cell5.Location = new System.Drawing.Point(309, 152);
+            this.cell5.Location = new System.Drawing.Point(156, 124);
             this.cell5.Name = "cell5";
             this.cell5.Size = new System.Drawing.Size(20, 20);
             this.cell5.TabIndex = 4;
             // 
             // cell6
             // 
-            this.cell6.Location = new System.Drawing.Point(335, 152);
+            this.cell6.Location = new System.Drawing.Point(182, 124);
             this.cell6.Name = "cell6";
             this.cell6.Size = new System.Drawing.Size(20, 20);
             this.cell6.TabIndex = 3;
             // 
             // cell7
             // 
-            this.cell7.Location = new System.Drawing.Point(368, 152);
+            this.cell7.Location = new System.Drawing.Point(215, 124);
             this.cell7.Name = "cell7";
             this.cell7.Size = new System.Drawing.Size(20, 20);
             this.cell7.TabIndex = 8;
             // 
             // cell8
             // 
-            this.cell8.Location = new System.Drawing.Point(394, 152);
+            this.cell8.Location = new System.Drawing.Point(241, 124);
             this.cell8.Name = "cell8";
             this.cell8.Size = new System.Drawing.Size(20, 20);
             this.cell8.TabIndex = 7;
             // 
             // cell9
             // 
-            this.cell9.Location = new System.Drawing.Point(420, 152);
+            this.cell9.Location = new System.Drawing.Point(267, 124);
             this.cell9.Name = "cell9";
             this.cell9.Size = new System.Drawing.Size(20, 20);
             this.cell9.TabIndex = 6;
             // 
             // cell16
             // 
-            this.cell16.Location = new System.Drawing.Point(368, 178);
+            this.cell16.Location = new System.Drawing.Point(215, 150);
             this.cell16.Name = "cell16";
             this.cell16.Size = new System.Drawing.Size(20, 20);
             this.cell16.TabIndex = 17;
             // 
             // cell17
             // 
-            this.cell17.Location = new System.Drawing.Point(394, 178);
+            this.cell17.Location = new System.Drawing.Point(241, 150);
             this.cell17.Name = "cell17";
             this.cell17.Size = new System.Drawing.Size(20, 20);
             this.cell17.TabIndex = 16;
             // 
             // cell18
             // 
-            this.cell18.Location = new System.Drawing.Point(420, 178);
+            this.cell18.Location = new System.Drawing.Point(267, 150);
             this.cell18.Name = "cell18";
             this.cell18.Size = new System.Drawing.Size(20, 20);
             this.cell18.TabIndex = 15;
             // 
             // cell13
             // 
-            this.cell13.Location = new System.Drawing.Point(283, 178);
+            this.cell13.Location = new System.Drawing.Point(130, 150);
             this.cell13.Name = "cell13";
             this.cell13.Size = new System.Drawing.Size(20, 20);
             this.cell13.TabIndex = 14;
             // 
             // cell14
             // 
-            this.cell14.Location = new System.Drawing.Point(309, 178);
+            this.cell14.Location = new System.Drawing.Point(156, 150);
             this.cell14.Name = "cell14";
             this.cell14.Size = new System.Drawing.Size(20, 20);
             this.cell14.TabIndex = 13;
             // 
             // cell15
             // 
-            this.cell15.Location = new System.Drawing.Point(335, 178);
+            this.cell15.Location = new System.Drawing.Point(182, 150);
             this.cell15.Name = "cell15";
             this.cell15.Size = new System.Drawing.Size(20, 20);
             this.cell15.TabIndex = 12;
             // 
             // cell12
             // 
-            this.cell12.Location = new System.Drawing.Point(248, 178);
+            this.cell12.Location = new System.Drawing.Point(95, 150);
             this.cell12.Name = "cell12";
             this.cell12.Size = new System.Drawing.Size(20, 20);
             this.cell12.TabIndex = 11;
             // 
             // cell11
             // 
-            this.cell11.Location = new System.Drawing.Point(222, 178);
+            this.cell11.Location = new System.Drawing.Point(69, 150);
             this.cell11.Name = "cell11";
             this.cell11.Size = new System.Drawing.Size(20, 20);
             this.cell11.TabIndex = 10;
             // 
             // cell10
             // 
-            this.cell10.Location = new System.Drawing.Point(196, 178);
+            this.cell10.Location = new System.Drawing.Point(43, 150);
             this.cell10.Name = "cell10";
             this.cell10.Size = new System.Drawing.Size(20, 20);
             this.cell10.TabIndex = 9;
             // 
             // cell25
             // 
-            this.cell25.Location = new System.Drawing.Point(368, 204);
+            this.cell25.Location = new System.Drawing.Point(215, 176);
             this.cell25.Name = "cell25";
             this.cell25.Size = new System.Drawing.Size(20, 20);
             this.cell25.TabIndex = 26;
             // 
             // cell26
             // 
-            this.cell26.Location = new System.Drawing.Point(394, 204);
+            this.cell26.Location = new System.Drawing.Point(241, 176);
             this.cell26.Name = "cell26";
             this.cell26.Size = new System.Drawing.Size(20, 20);
             this.cell26.TabIndex = 25;
             // 
             // cell27
             // 
-            this.cell27.Location = new System.Drawing.Point(420, 204);
+            this.cell27.Location = new System.Drawing.Point(267, 176);
             this.cell27.Name = "cell27";
             this.cell27.Size = new System.Drawing.Size(20, 20);
             this.cell27.TabIndex = 24;
             // 
             // cell22
             // 
-            this.cell22.Location = new System.Drawing.Point(283, 204);
+            this.cell22.Location = new System.Drawing.Point(130, 176);
             this.cell22.Name = "cell22";
             this.cell22.Size = new System.Drawing.Size(20, 20);
             this.cell22.TabIndex = 23;
             // 
             // cell23
             // 
-            this.cell23.Location = new System.Drawing.Point(309, 204);
+            this.cell23.Location = new System.Drawing.Point(156, 176);
             this.cell23.Name = "cell23";
             this.cell23.Size = new System.Drawing.Size(20, 20);
             this.cell23.TabIndex = 22;
             // 
             // cell24
             // 
-            this.cell24.Location = new System.Drawing.Point(335, 204);
+            this.cell24.Location = new System.Drawing.Point(182, 176);
             this.cell24.Name = "cell24";
             this.cell24.Size = new System.Drawing.Size(20, 20);
             this.cell24.TabIndex = 21;
             // 
             // cell21
             // 
-            this.cell21.Location = new System.Drawing.Point(248, 204);
+            this.cell21.Location = new System.Drawing.Point(95, 176);
             this.cell21.Name = "cell21";
             this.cell21.Size = new System.Drawing.Size(20, 20);
             this.cell21.TabIndex = 20;
             // 
             // cell20
             // 
-            this.cell20.Location = new System.Drawing.Point(222, 204);
+            this.cell20.Location = new System.Drawing.Point(69, 176);
             this.cell20.Name = "cell20";
             this.cell20.Size = new System.Drawing.Size(20, 20);
             this.cell20.TabIndex = 19;
             // 
             // cell19
             // 
-            this.cell19.Location = new System.Drawing.Point(196, 204);
+            this.cell19.Location = new System.Drawing.Point(43, 176);
             this.cell19.Name = "cell19";
             this.cell19.Size = new System.Drawing.Size(20, 20);
             this.cell19.TabIndex = 18;
             // 
             // cell52
             // 
-            this.cell52.Location = new System.Drawing.Point(368, 290);
+            this.cell52.Location = new System.Drawing.Point(215, 262);
             this.cell52.Name = "cell52";
             this.cell52.Size = new System.Drawing.Size(20, 20);
             this.cell52.TabIndex = 53;
             // 
             // cell53
             // 
-            this.cell53.Location = new System.Drawing.Point(394, 290);
+            this.cell53.Location = new System.Drawing.Point(241, 262);
             this.cell53.Name = "cell53";
             this.cell53.Size = new System.Drawing.Size(20, 20);
             this.cell53.TabIndex = 52;
             // 
             // cell54
             // 
-            this.cell54.Location = new System.Drawing.Point(420, 290);
+            this.cell54.Location = new System.Drawing.Point(267, 262);
             this.cell54.Name = "cell54";
             this.cell54.Size = new System.Drawing.Size(20, 20);
             this.cell54.TabIndex = 51;
             // 
             // cell49
             // 
-            this.cell49.Location = new System.Drawing.Point(283, 290);
+            this.cell49.Location = new System.Drawing.Point(130, 262);
             this.cell49.Name = "cell49";
             this.cell49.Size = new System.Drawing.Size(20, 20);
             this.cell49.TabIndex = 50;
             // 
             // cell50
             // 
-            this.cell50.Location = new System.Drawing.Point(309, 290);
+            this.cell50.Location = new System.Drawing.Point(156, 262);
             this.cell50.Name = "cell50";
             this.cell50.Size = new System.Drawing.Size(20, 20);
             this.cell50.TabIndex = 49;
             // 
             // cell51
             // 
-            this.cell51.Location = new System.Drawing.Point(335, 290);
+            this.cell51.Location = new System.Drawing.Point(182, 262);
             this.cell51.Name = "cell51";
             this.cell51.Size = new System.Drawing.Size(20, 20);
             this.cell51.TabIndex = 48;
             // 
             // cell48
             // 
-            this.cell48.Location = new System.Drawing.Point(248, 290);
+            this.cell48.Location = new System.Drawing.Point(95, 262);
             this.cell48.Name = "cell48";
             this.cell48.Size = new System.Drawing.Size(20, 20);
             this.cell48.TabIndex = 47;
             // 
             // cell47
             // 
-            this.cell47.Location = new System.Drawing.Point(222, 290);
+            this.cell47.Location = new System.Drawing.Point(69, 262);
             this.cell47.Name = "cell47";
             this.cell47.Size = new System.Drawing.Size(20, 20);
             this.cell47.TabIndex = 46;
             // 
             // cell46
             // 
-            this.cell46.Location = new System.Drawing.Point(196, 290);
+            this.cell46.Location = new System.Drawing.Point(43, 262);
             this.cell46.Name = "cell46";
             this.cell46.Size = new System.Drawing.Size(20, 20);
             this.cell46.TabIndex = 45;
             // 
             // cell43
             // 
-            this.cell43.Location = new System.Drawing.Point(368, 264);
+            this.cell43.Location = new System.Drawing.Point(215, 236);
             this.cell43.Name = "cell43";
             this.cell43.Size = new System.Drawing.Size(20, 20);
             this.cell43.TabIndex = 44;
             // 
             // cell44
             // 
-            this.cell44.Location = new System.Drawing.Point(394, 264);
+            this.cell44.Location = new System.Drawing.Point(241, 236);
             this.cell44.Name = "cell44";
             this.cell44.Size = new System.Drawing.Size(20, 20);
             this.cell44.TabIndex = 43;
             // 
             // cell45
             // 
-            this.cell45.Location = new System.Drawing.Point(420, 264);
+            this.cell45.Location = new System.Drawing.Point(267, 236);
             this.cell45.Name = "cell45";
             this.cell45.Size = new System.Drawing.Size(20, 20);
             this.cell45.TabIndex = 42;
             // 
             // cell40
             // 
-            this.cell40.Location = new System.Drawing.Point(283, 264);
+            this.cell40.Location = new System.Drawing.Point(130, 236);
             this.cell40.Name = "cell40";
             this.cell40.Size = new System.Drawing.Size(20, 20);
             this.cell40.TabIndex = 41;
             // 
             // cell41
             // 
-            this.cell41.Location = new System.Drawing.Point(309, 264);
+            this.cell41.Location = new System.Drawing.Point(156, 236);
             this.cell41.Name = "cell41";
             this.cell41.Size = new System.Drawing.Size(20, 20);
             this.cell41.TabIndex = 40;
             // 
             // cell42
             // 
-            this.cell42.Location = new System.Drawing.Point(335, 264);
+            this.cell42.Location = new System.Drawing.Point(182, 236);
             this.cell42.Name = "cell42";
             this.cell42.Size = new System.Drawing.Size(20, 20);
             this.cell42.TabIndex = 39;
             // 
             // cell39
             // 
-            this.cell39.Location = new System.Drawing.Point(248, 264);
+            this.cell39.Location = new System.Drawing.Point(95, 236);
             this.cell39.Name = "cell39";
             this.cell39.Size = new System.Drawing.Size(20, 20);
             this.cell39.TabIndex = 38;
             // 
             // cell38
             // 
-            this.cell38.Location = new System.Drawing.Point(222, 264);
+            this.cell38.Location = new System.Drawing.Point(69, 236);
             this.cell38.Name = "cell38";
             this.cell38.Size = new System.Drawing.Size(20, 20);
             this.cell38.TabIndex = 37;
             // 
             // cell37
             // 
-            this.cell37.Location = new System.Drawing.Point(196, 264);
+            this.cell37.Location = new System.Drawing.Point(43, 236);
             this.cell37.Name = "cell37";
             this.cell37.Size = new System.Drawing.Size(20, 20);
             this.cell37.TabIndex = 36;
             // 
             // cell34
             // 
-            this.cell34.Location = new System.Drawing.Point(368, 238);
+            this.cell34.Location = new System.Drawing.Point(215, 210);
             this.cell34.Name = "cell34";
             this.cell34.Size = new System.Drawing.Size(20, 20);
             this.cell34.TabIndex = 35;
             // 
             // cell35
             // 
-            this.cell35.Location = new System.Drawing.Point(394, 238);
+            this.cell35.Location = new System.Drawing.Point(241, 210);
             this.cell35.Name = "cell35";
             this.cell35.Size = new System.Drawing.Size(20, 20);
             this.cell35.TabIndex = 34;
             // 
             // cell36
             // 
-            this.cell36.Location = new System.Drawing.Point(420, 238);
+            this.cell36.Location = new System.Drawing.Point(267, 210);
             this.cell36.Name = "cell36";
             this.cell36.Size = new System.Drawing.Size(20, 20);
             this.cell36.TabIndex = 33;
             // 
             // cell31
             // 
-            this.cell31.Location = new System.Drawing.Point(283, 238);
+            this.cell31.Location = new System.Drawing.Point(130, 210);
             this.cell31.Name = "cell31";
             this.cell31.Size = new System.Drawing.Size(20, 20);
             this.cell31.TabIndex = 32;
             // 
             // cell32
             // 
-            this.cell32.Location = new System.Drawing.Point(309, 238);
+            this.cell32.Location = new System.Drawing.Point(156, 210);
             this.cell32.Name = "cell32";
             this.cell32.Size = new System.Drawing.Size(20, 20);
             this.cell32.TabIndex = 31;
             // 
             // cell33
             // 
-            this.cell33.Location = new System.Drawing.Point(335, 238);
+            this.cell33.Location = new System.Drawing.Point(182, 210);
             this.cell33.Name = "cell33";
             this.cell33.Size = new System.Drawing.Size(20, 20);
             this.cell33.TabIndex = 30;
             // 
             // cell30
             // 
-            this.cell30.Location = new System.Drawing.Point(248, 238);
+            this.cell30.Location = new System.Drawing.Point(95, 210);
             this.cell30.Name = "cell30";
             this.cell30.Size = new System.Drawing.Size(20, 20);
             this.cell30.TabIndex = 29;
             // 
             // cell29
             // 
-            this.cell29.Location = new System.Drawing.Point(222, 238);
+            this.cell29.Location = new System.Drawing.Point(69, 210);
             this.cell29.Name = "cell29";
             this.cell29.Size = new System.Drawing.Size(20, 20);
             this.cell29.TabIndex = 28;
             // 
             // cell28
             // 
-            this.cell28.Location = new System.Drawing.Point(196, 238);
+            this.cell28.Location = new System.Drawing.Point(43, 210);
             this.cell28.Name = "cell28";
             this.cell28.Size = new System.Drawing.Size(20, 20);
             this.cell28.TabIndex = 27;
             // 
             // cell79
             // 
-            this.cell79.Location = new System.Drawing.Point(368, 377);
+            this.cell79.Location = new System.Drawing.Point(215, 349);
             this.cell79.Name = "cell79";
             this.cell79.Size = new System.Drawing.Size(20, 20);
             this.cell79.TabIndex = 80;
             // 
             // cell80
             // 
-            this.cell80.Location = new System.Drawing.Point(394, 377);
+            this.cell80.Location = new System.Drawing.Point(241, 349);
             this.cell80.Name = "cell80";
             this.cell80.Size = new System.Drawing.Size(20, 20);
             this.cell80.TabIndex = 79;
             // 
             // cell81
             // 
-            this.cell81.Location = new System.Drawing.Point(420, 377);
+            this.cell81.Location = new System.Drawing.Point(267, 349);
             this.cell81.Name = "cell81";
             this.cell81.Size = new System.Drawing.Size(20, 20);
             this.cell81.TabIndex = 78;
             // 
             // cell76
             // 
-            this.cell76.Location = new System.Drawing.Point(283, 377);
+            this.cell76.Location = new System.Drawing.Point(130, 349);
             this.cell76.Name = "cell76";
             this.cell76.Size = new System.Drawing.Size(20, 20);
             this.cell76.TabIndex = 77;
             // 
             // cell77
             // 
-            this.cell77.Location = new System.Drawing.Point(309, 377);
+            this.cell77.Location = new System.Drawing.Point(156, 349);
             this.cell77.Name = "cell77";
             this.cell77.Size = new System.Drawing.Size(20, 20);
             this.cell77.TabIndex = 76;
             // 
             // cell78
             // 
-            this.cell78.Location = new System.Drawing.Point(335, 377);
+            this.cell78.Location = new System.Drawing.Point(182, 349);
             this.cell78.Name = "cell78";
             this.cell78.Size = new System.Drawing.Size(20, 20);
             this.cell78.TabIndex = 75;
             // 
             // cell75
             // 
-            this.cell75.Location = new System.Drawing.Point(248, 377);
+            this.cell75.Location = new System.Drawing.Point(95, 349);
             this.cell75.Name = "cell75";
             this.cell75.Size = new System.Drawing.Size(20, 20);
             this.cell75.TabIndex = 74;
             // 
             // cell74
             // 
-            this.cell74.Location = new System.Drawing.Point(222, 377);
+            this.cell74.Location = new System.Drawing.Point(69, 349);
             this.cell74.Name = "cell74";
             this.cell74.Size = new System.Drawing.Size(20, 20);
             this.cell74.TabIndex = 73;
             // 
             // cell73
             // 
-            this.cell73.Location = new System.Drawing.Point(196, 377);
+            this.cell73.Location = new System.Drawing.Point(43, 349);
             this.cell73.Name = "cell73";
             this.cell73.Size = new System.Drawing.Size(20, 20);
             this.cell73.TabIndex = 72;
             // 
             // cell70
             // 
-            this.cell70.Location = new System.Drawing.Point(368, 351);
+            this.cell70.Location = new System.Drawing.Point(215, 323);
             this.cell70.Name = "cell70";
             this.cell70.Size = new System.Drawing.Size(20, 20);
             this.cell70.TabIndex = 71;
             // 
             // cell71
             // 
-            this.cell71.Location = new System.Drawing.Point(394, 351);
+            this.cell71.Location = new System.Drawing.Point(241, 323);
             this.cell71.Name = "cell71";
             this.cell71.Size = new System.Drawing.Size(20, 20);
             this.cell71.TabIndex = 70;
             // 
             // cell72
             // 
-            this.cell72.Location = new System.Drawing.Point(420, 351);
+            this.cell72.Location = new System.Drawing.Point(267, 323);
             this.cell72.Name = "cell72";
             this.cell72.Size = new System.Drawing.Size(20, 20);
             this.cell72.TabIndex = 69;
             // 
             // cell67
             // 
-            this.cell67.Location = new System.Drawing.Point(283, 351);
+            this.cell67.Location = new System.Drawing.Point(130, 323);
             this.cell67.Name = "cell67";
             this.cell67.Size = new System.Drawing.Size(20, 20);
             this.cell67.TabIndex = 68;
             // 
             // cell68
             // 
-            this.cell68.Location = new System.Drawing.Point(309, 351);
+            this.cell68.Location = new System.Drawing.Point(156, 323);
             this.cell68.Name = "cell68";
             this.cell68.Size = new System.Drawing.Size(20, 20);
             this.cell68.TabIndex = 67;
             // 
             // cell69
             // 
-            this.cell69.Location = new System.Drawing.Point(335, 351);
+            this.cell69.Location = new System.Drawing.Point(182, 323);
             this.cell69.Name = "cell69";
             this.cell69.Size = new System.Drawing.Size(20, 20);
             this.cell69.TabIndex = 66;
             // 
             // cell66
             // 
-            this.cell66.Location = new System.Drawing.Point(248, 351);
+            this.cell66.Location = new System.Drawing.Point(95, 323);
             this.cell66.Name = "cell66";
             this.cell66.Size = new System.Drawing.Size(20, 20);
             this.cell66.TabIndex = 65;
             // 
             // cell65
             // 
-            this.cell65.Location = new System.Drawing.Point(222, 351);
+            this.cell65.Location = new System.Drawing.Point(69, 323);
             this.cell65.Name = "cell65";
             this.cell65.Size = new System.Drawing.Size(20, 20);
             this.cell65.TabIndex = 64;
             // 
             // cell64
             // 
-            this.cell64.Location = new System.Drawing.Point(196, 351);
+            this.cell64.Location = new System.Drawing.Point(43, 323);
             this.cell64.Name = "cell64";
             this.cell64.Size = new System.Drawing.Size(20, 20);
             this.cell64.TabIndex = 63;
             // 
             // cell61
             // 
-            this.cell61.Location = new System.Drawing.Point(368, 325);
+            this.cell61.Location = new System.Drawing.Point(215, 297);
             this.cell61.Name = "cell61";
             this.cell61.Size = new System.Drawing.Size(20, 20);
             this.cell61.TabIndex = 62;
             // 
             // cell62
             // 
-            this.cell62.Location = new System.Drawing.Point(394, 325);
+            this.cell62.Location = new System.Drawing.Point(241, 297);
             this.cell62.Name = "cell62";
             this.cell62.Size = new System.Drawing.Size(20, 20);
             this.cell62.TabIndex = 61;
             // 
             // cell63
             // 
-            this.cell63.Location = new System.Drawing.Point(420, 325);
+            this.cell63.Location = new System.Drawing.Point(267, 297);
             this.cell63.Name = "cell63";
             this.cell63.Size = new System.Drawing.Size(20, 20);
             this.cell63.TabIndex = 60;
             // 
             // cell58
             // 
-            this.cell58.Location = new System.Drawing.Point(283, 325);
+            this.cell58.Location = new System.Drawing.Point(130, 297);
             this.cell58.Name = "cell58";
             this.cell58.Size = new System.Drawing.Size(20, 20);
             this.cell58.TabIndex = 59;
             // 
             // cell59
             // 
-            this.cell59.Location = new System.Drawing.Point(309, 325);
+            this.cell59.Location = new System.Drawing.Point(156, 297);
             this.cell59.Name = "cell59";
             this.cell59.Size = new System.Drawing.Size(20, 20);
             this.cell59.TabIndex = 58;
             // 
             // cell60
             // 
-            this.cell60.Location = new System.Drawing.Point(335, 325);
+            this.cell60.Location = new System.Drawing.Point(182, 297);
             this.cell60.Name = "cell60";
             this.cell60.Size = new System.Drawing.Size(20, 20);
             this.cell60.TabIndex = 57;
             // 
             // cell57
             // 
-            this.cell57.Location = new System.Drawing.Point(248, 325);
+            this.cell57.Location = new System.Drawing.Point(95, 297);
             this.cell57.Name = "cell57";
             this.cell57.Size = new System.Drawing.Size(20, 20);
             this.cell57.TabIndex = 56;
             // 
             // cell56
             // 
-            this.cell56.Location = new System.Drawing.Point(222, 325);
+            this.cell56.Location = new System.Drawing.Point(69, 297);
             this.cell56.Name = "cell56";
             this.cell56.Size = new System.Drawing.Size(20, 20);
             this.cell56.TabIndex = 55;
             // 
             // cell55
             // 
-            this.cell55.Location = new System.Drawing.Point(196, 325);
+            this.cell55.Location = new System.Drawing.Point(43, 297);
             this.cell55.Name = "cell55";
             this.cell55.Size = new System.Drawing.Size(20, 20);
             this.cell55.TabIndex = 54;
@@ -694,7 +697,7 @@
             this.fileToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(676, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1149, 24);
             this.menuStrip1.TabIndex = 81;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -709,13 +712,13 @@
             // loadPuzzleToolStripMenuItem
             // 
             this.loadPuzzleToolStripMenuItem.Name = "loadPuzzleToolStripMenuItem";
-            this.loadPuzzleToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
+            this.loadPuzzleToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.loadPuzzleToolStripMenuItem.Text = "Load Puzzle";
             this.loadPuzzleToolStripMenuItem.Click += new System.EventHandler(this.loadPuzzleToolStripMenuItem_Click);
             // 
             // btnAnalyze
             // 
-            this.btnAnalyze.Location = new System.Drawing.Point(499, 178);
+            this.btnAnalyze.Location = new System.Drawing.Point(346, 150);
             this.btnAnalyze.Name = "btnAnalyze";
             this.btnAnalyze.Size = new System.Drawing.Size(75, 23);
             this.btnAnalyze.TabIndex = 82;
@@ -726,7 +729,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(471, 238);
+            this.label1.Location = new System.Drawing.Point(318, 210);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(74, 13);
             this.label1.TabIndex = 83;
@@ -735,7 +738,7 @@
             // lblBaseDifficulty
             // 
             this.lblBaseDifficulty.AutoSize = true;
-            this.lblBaseDifficulty.Location = new System.Drawing.Point(567, 238);
+            this.lblBaseDifficulty.Location = new System.Drawing.Point(414, 210);
             this.lblBaseDifficulty.Name = "lblBaseDifficulty";
             this.lblBaseDifficulty.Size = new System.Drawing.Size(32, 13);
             this.lblBaseDifficulty.TabIndex = 84;
@@ -744,7 +747,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(471, 267);
+            this.label3.Location = new System.Drawing.Point(318, 239);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(90, 13);
             this.label3.TabIndex = 85;
@@ -753,7 +756,7 @@
             // lblModDiff
             // 
             this.lblModDiff.AutoSize = true;
-            this.lblModDiff.Location = new System.Drawing.Point(567, 267);
+            this.lblModDiff.Location = new System.Drawing.Point(414, 239);
             this.lblModDiff.Name = "lblModDiff";
             this.lblModDiff.Size = new System.Drawing.Size(32, 13);
             this.lblModDiff.TabIndex = 86;
@@ -762,17 +765,45 @@
             // lblPuzzleName
             // 
             this.lblPuzzleName.AutoSize = true;
-            this.lblPuzzleName.Location = new System.Drawing.Point(148, 67);
+            this.lblPuzzleName.Location = new System.Drawing.Point(12, 44);
             this.lblPuzzleName.Name = "lblPuzzleName";
             this.lblPuzzleName.Size = new System.Drawing.Size(66, 13);
             this.lblPuzzleName.TabIndex = 87;
             this.lblPuzzleName.Text = "puzzle name";
             // 
+            // pnlGraph
+            // 
+            this.pnlGraph.BackColor = System.Drawing.Color.White;
+            this.pnlGraph.Location = new System.Drawing.Point(480, 89);
+            this.pnlGraph.Name = "pnlGraph";
+            this.pnlGraph.Size = new System.Drawing.Size(315, 323);
+            this.pnlGraph.TabIndex = 88;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(828, 101);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(81, 13);
+            this.label2.TabIndex = 89;
+            this.label2.Text = "Difficulty Rating";
+            // 
+            // lblDifficulty
+            // 
+            this.lblDifficulty.AutoSize = true;
+            this.lblDifficulty.Location = new System.Drawing.Point(828, 141);
+            this.lblDifficulty.Name = "lblDifficulty";
+            this.lblDifficulty.Size = new System.Drawing.Size(0, 13);
+            this.lblDifficulty.TabIndex = 90;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(676, 522);
+            this.ClientSize = new System.Drawing.Size(1149, 522);
+            this.Controls.Add(this.lblDifficulty);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.pnlGraph);
             this.Controls.Add(this.lblPuzzleName);
             this.Controls.Add(this.lblModDiff);
             this.Controls.Add(this.label3);
@@ -963,6 +994,9 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lblModDiff;
         private System.Windows.Forms.Label lblPuzzleName;
+        private System.Windows.Forms.Panel pnlGraph;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblDifficulty;
 
 
     }

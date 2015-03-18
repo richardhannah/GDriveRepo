@@ -114,13 +114,18 @@
             this.loadPuzzleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnAnalyze = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.lblBaseDifficulty = new System.Windows.Forms.Label();
+            this.lblNoGivens = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.lblModDiff = new System.Windows.Forms.Label();
             this.lblPuzzleName = new System.Windows.Forms.Label();
             this.pnlGraph = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.lblDifficulty = new System.Windows.Forms.Label();
+            this.btnSolve = new System.Windows.Forms.Button();
+            this.lblDistroGivens = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.lblDistroNumbers = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -712,13 +717,13 @@
             // loadPuzzleToolStripMenuItem
             // 
             this.loadPuzzleToolStripMenuItem.Name = "loadPuzzleToolStripMenuItem";
-            this.loadPuzzleToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.loadPuzzleToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
             this.loadPuzzleToolStripMenuItem.Text = "Load Puzzle";
             this.loadPuzzleToolStripMenuItem.Click += new System.EventHandler(this.loadPuzzleToolStripMenuItem_Click);
             // 
             // btnAnalyze
             // 
-            this.btnAnalyze.Location = new System.Drawing.Point(346, 150);
+            this.btnAnalyze.Location = new System.Drawing.Point(346, 89);
             this.btnAnalyze.Name = "btnAnalyze";
             this.btnAnalyze.Size = new System.Drawing.Size(75, 23);
             this.btnAnalyze.TabIndex = 82;
@@ -729,20 +734,20 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(318, 210);
+            this.label1.Location = new System.Drawing.Point(318, 141);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(74, 13);
+            this.label1.Size = new System.Drawing.Size(68, 13);
             this.label1.TabIndex = 83;
-            this.label1.Text = "Basic difficulty";
+            this.label1.Text = "no. of givens";
             // 
-            // lblBaseDifficulty
+            // lblNoGivens
             // 
-            this.lblBaseDifficulty.AutoSize = true;
-            this.lblBaseDifficulty.Location = new System.Drawing.Point(414, 210);
-            this.lblBaseDifficulty.Name = "lblBaseDifficulty";
-            this.lblBaseDifficulty.Size = new System.Drawing.Size(32, 13);
-            this.lblBaseDifficulty.TabIndex = 84;
-            this.lblBaseDifficulty.Text = "result";
+            this.lblNoGivens.AutoSize = true;
+            this.lblNoGivens.Location = new System.Drawing.Point(442, 141);
+            this.lblNoGivens.Name = "lblNoGivens";
+            this.lblNoGivens.Size = new System.Drawing.Size(32, 13);
+            this.lblNoGivens.TabIndex = 84;
+            this.lblNoGivens.Text = "result";
             // 
             // label3
             // 
@@ -756,7 +761,7 @@
             // lblModDiff
             // 
             this.lblModDiff.AutoSize = true;
-            this.lblModDiff.Location = new System.Drawing.Point(414, 239);
+            this.lblModDiff.Location = new System.Drawing.Point(442, 239);
             this.lblModDiff.Name = "lblModDiff";
             this.lblModDiff.Size = new System.Drawing.Size(32, 13);
             this.lblModDiff.TabIndex = 86;
@@ -774,7 +779,7 @@
             // pnlGraph
             // 
             this.pnlGraph.BackColor = System.Drawing.Color.White;
-            this.pnlGraph.Location = new System.Drawing.Point(480, 89);
+            this.pnlGraph.Location = new System.Drawing.Point(513, 89);
             this.pnlGraph.Name = "pnlGraph";
             this.pnlGraph.Size = new System.Drawing.Size(315, 323);
             this.pnlGraph.TabIndex = 88;
@@ -796,18 +801,69 @@
             this.lblDifficulty.Size = new System.Drawing.Size(0, 13);
             this.lblDifficulty.TabIndex = 90;
             // 
+            // btnSolve
+            // 
+            this.btnSolve.Location = new System.Drawing.Point(346, 277);
+            this.btnSolve.Name = "btnSolve";
+            this.btnSolve.Size = new System.Drawing.Size(75, 23);
+            this.btnSolve.TabIndex = 91;
+            this.btnSolve.Text = "Solve";
+            this.btnSolve.UseVisualStyleBackColor = true;
+            this.btnSolve.Click += new System.EventHandler(this.btnSolve_Click);
+            // 
+            // lblDistroGivens
+            // 
+            this.lblDistroGivens.AutoSize = true;
+            this.lblDistroGivens.Location = new System.Drawing.Point(442, 166);
+            this.lblDistroGivens.Name = "lblDistroGivens";
+            this.lblDistroGivens.Size = new System.Drawing.Size(32, 13);
+            this.lblDistroGivens.TabIndex = 93;
+            this.lblDistroGivens.Text = "result";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(318, 166);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(103, 13);
+            this.label5.TabIndex = 92;
+            this.label5.Text = "distribution of givens";
+            // 
+            // lblDistroNumbers
+            // 
+            this.lblDistroNumbers.AutoSize = true;
+            this.lblDistroNumbers.Location = new System.Drawing.Point(442, 195);
+            this.lblDistroNumbers.Name = "lblDistroNumbers";
+            this.lblDistroNumbers.Size = new System.Drawing.Size(32, 13);
+            this.lblDistroNumbers.TabIndex = 95;
+            this.lblDistroNumbers.Text = "result";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(318, 195);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(112, 13);
+            this.label7.TabIndex = 94;
+            this.label7.Text = "distribution of numbers";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1149, 522);
+            this.Controls.Add(this.lblDistroNumbers);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.lblDistroGivens);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.btnSolve);
             this.Controls.Add(this.lblDifficulty);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.pnlGraph);
             this.Controls.Add(this.lblPuzzleName);
             this.Controls.Add(this.lblModDiff);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.lblBaseDifficulty);
+            this.Controls.Add(this.lblNoGivens);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnAnalyze);
             this.Controls.Add(this.cell79);
@@ -990,13 +1046,18 @@
         private System.Windows.Forms.ToolStripMenuItem loadPuzzleToolStripMenuItem;
         private System.Windows.Forms.Button btnAnalyze;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label lblBaseDifficulty;
+        private System.Windows.Forms.Label lblNoGivens;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lblModDiff;
         private System.Windows.Forms.Label lblPuzzleName;
         private System.Windows.Forms.Panel pnlGraph;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblDifficulty;
+        private System.Windows.Forms.Button btnSolve;
+        private System.Windows.Forms.Label lblDistroGivens;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lblDistroNumbers;
+        private System.Windows.Forms.Label label7;
 
 
     }

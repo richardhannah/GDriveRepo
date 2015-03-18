@@ -168,7 +168,7 @@ namespace Sudoku
         private void btnAnalyze_Click(object sender, EventArgs e)
         {
             cellAnalyses.Clear();
-            
+
             basicAnalysis();
             advancedAnalysis();
 
@@ -176,8 +176,186 @@ namespace Sudoku
 
         private void basicAnalysis()
         {
-            lblBaseDifficulty.Text = "bleh";
+            lblNoGivens.Text = "bleh";
+
+            int countOfGivens = 0;
+            for (int x = 0; x < 9; x++)
+            {
+                for (int y = 0; y < 9; y++)
+                {
+                    if (gridData[x, y] > 0) { countOfGivens++; }
+                    
+
+
+                }
+            }
+
+
+            //simple count of the givens
+                if(countOfGivens > 32){
+                    lblNoGivens.Text = "easy";
+                }
+                else if(countOfGivens <= 32 && countOfGivens > 30){
+                    lblNoGivens.Text = "medium";
+                }
+                else if (countOfGivens <= 30 && countOfGivens >= 28)
+                {
+                    lblNoGivens.Text = "hard";
+                }
+                else if (countOfGivens < 28)
+                {
+                    lblNoGivens.Text = "very hard";
+                }
+
+
+            //distribution of givens
+
+
+                List<SectorInfo> sectorList = new List<SectorInfo>();
+                sectorList.Add(new SectorInfo(1, 0, 0));
+                sectorList.Add(new SectorInfo(2, 3, 0));
+                sectorList.Add(new SectorInfo(3, 6, 0));
+                sectorList.Add(new SectorInfo(4, 0, 3));
+                sectorList.Add(new SectorInfo(5, 3, 3));
+                sectorList.Add(new SectorInfo(6, 6, 3));
+                sectorList.Add(new SectorInfo(7, 0, 6));
+                sectorList.Add(new SectorInfo(8, 3, 6));
+                sectorList.Add(new SectorInfo(9, 6, 6));
+
+                foreach (SectorInfo secInfo in sectorList)
+                {
+
+                    for (int x = secInfo.StartPoint.X; x < (secInfo.StartPoint.X + 3); x++)
+                    {
+                        for (int y = secInfo.StartPoint.Y; y < (secInfo.StartPoint.Y + 3); y++)
+                        {
+                            if (gridData[x, y] > 0)
+                            {
+                                secInfo.GivensInSector++;
+                            }
+                        }
+                    }
+
+                }
+
+
+                List<int> givensBySector = new List<int>();
+                
+                foreach (SectorInfo secInfo in sectorList)
+                {
+
+                    givensBySector.Add(secInfo.GivensInSector);
+                }
+
+                int sectorsWithMoreThanOneGiven=0;
+                int sectorsWithOneGiven=0;
+                int sectorsWithNoGivens=0;
+
+                foreach (int given in givensBySector)
+                {
+                    if (given > 0)
+                    {
+                        if (given > 1)
+                        {
+                            sectorsWithMoreThanOneGiven++;
+                        }
+                        else
+                        {
+                            sectorsWithOneGiven++;
+                        }
+                    }
+                    else
+                    {
+                        sectorsWithNoGivens++;
+                    }
+                }
+
+                if (sectorsWithNoGivens > 0)
+                {
+                    lblDistroGivens.Text = "very hard";
+                }
+                else if (sectorsWithMoreThanOneGiven > 8)
+                {
+                    lblDistroGivens.Text = "easy";
+                }
+                else if (sectorsWithOneGiven > 1 && sectorsWithOneGiven < 3) {
+                    lblDistroGivens.Text = "medium";
+                }
+                else if (sectorsWithOneGiven >=3 )
+                {
+                    lblDistroGivens.Text = "hard";
+                }
+
+            //distribution of numbers
+
+            int[] numberDistro = new int[10];
+
+
+            for (int x = 0; x < 9; x++)
+            {
+                for (int y = 0; y < 9; y++)
+                {
+                    if (gridData[x, y] > 0) {
+                        numberDistro[gridData[x, y]]++;
+                    }
+
+
+
+                }
+            }
+
+
+            int appearsAtLeast3times=0;
+            int appearsTwice = 0;
+            int appearsOnlyOnce = 0;
+            
+            for (int i = 1; i < 10; i++)
+            {
+
+                if (numberDistro[i] > 3)
+                {
+                    appearsAtLeast3times++;
+                }
+                else if (numberDistro[i] == 2)
+                {
+                    appearsTwice++;
+                }
+                else if (numberDistro[i] == 1)
+                {
+                    appearsOnlyOnce++;
+                }
+
+            }
+
+            if (appearsAtLeast3times > 8)
+            {
+                lblDistroNumbers.Text = "easy";
+            }
+            else if (appearsOnlyOnce > 1)
+            {
+                lblDistroNumbers.Text = "very hard";
+            }
+            else if (appearsOnlyOnce == 1)
+            {
+                lblDistroNumbers.Text = "hard";
+            }
+            else
+            {
+                lblDistroNumbers.Text = "medium";
+            }
+
+                    
+
+                
+
+            
+
+
         }
+
+
+
+
 
         private void advancedAnalysis()
         {
@@ -188,7 +366,7 @@ namespace Sudoku
                 for (int y = 0; y < 9; y++)
                 {
 
-                    Debug.WriteLine("Checking {0},{1} value is {2}", x, y, gridData[x, y]);
+                    //Debug.WriteLine("Checking {0},{1} value is {2}", x, y, gridData[x, y]);
                     AnalyseSquare(x, y);
 
                 }
@@ -208,13 +386,13 @@ namespace Sudoku
 
         private void DrawGraph()
         {
-            
+
 
             int[] graphData = new int[10] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
 
             foreach (CellInfo cInfo in cellAnalyses)
             {
-                Debug.WriteLine("Cell {0} {1} NumSolutions {2}", cInfo.Cell.X, cInfo.Cell.Y, cInfo.NumSolutions);
+                //Debug.WriteLine("Cell {0} {1} NumSolutions {2}", cInfo.Cell.X, cInfo.Cell.Y, cInfo.NumSolutions);
                 graphData[cInfo.NumSolutions]++;
 
             }
@@ -225,7 +403,7 @@ namespace Sudoku
 
             for (int i = 0; i < 10; i++)
             {
-                Debug.WriteLine("gdata {0}", graphData[i]);
+                //Debug.WriteLine("gdata {0}", graphData[i]);
                 g.DrawRectangle(graphPen, new Rectangle(10 + (30 * i), pnlGraph.Height - 10 - (graphData[i] * 5), 30, graphData[i] * 5));
 
             }
@@ -243,7 +421,7 @@ namespace Sudoku
         private void AnalyseSquare(int row, int col)
         {
 
-            
+
 
             if (gridData[row, col] > 0)
             {
@@ -252,51 +430,51 @@ namespace Sudoku
             else
             {
 
-                List<int> arrSolutions = new List<int>{1,2,3,4,5,6,7,8,9};
+                List<int> arrSolutions = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
 
 
                 //check the row
-                
-                    for (int y = 0; y < 9; y++)
-                    {
-                        //Debug.WriteLine("analysing {0} {1}", row, y);
 
-                        if (gridData[row,y] > 0 && arrSolutions.Contains(gridData[row, y]))
-                        {
-                            arrSolutions.Remove(gridData[row, y]);
-                        }
-                        
+                for (int y = 0; y < 9; y++)
+                {
+                    //Debug.WriteLine("analysing {0} {1}", row, y);
+
+                    if (gridData[row, y] > 0 && arrSolutions.Contains(gridData[row, y]))
+                    {
+                        arrSolutions.Remove(gridData[row, y]);
                     }
+
+                }
 
                 //check the column
 
-                    for (int x = 0; x < 9; x++)
+                for (int x = 0; x < 9; x++)
+                {
+
+
+                    if (gridData[x, col] > 0 && arrSolutions.Contains(gridData[x, col]))
                     {
-                       
-
-                        if (gridData[x, col] > 0 && arrSolutions.Contains(gridData[x,col]))
-                        {
-                            arrSolutions.Remove(gridData[x,col]);
-                        }
-
+                        arrSolutions.Remove(gridData[x, col]);
                     }
+
+                }
 
                 //check the sector
 
-                    int sectorStartRow = (row / 3)*3 ;
-                    int sectorStartCol = (col / 3)*3 ;
-                    Debug.WriteLine("sectorStartRow {0}", sectorStartRow);
+                int sectorStartRow = (row / 3) * 3;
+                int sectorStartCol = (col / 3) * 3;
+                //Debug.WriteLine("sectorStartRow {0}", sectorStartRow);
 
-                    for (int x = sectorStartRow; x < (sectorStartRow + 3); x++)
+                for (int x = sectorStartRow; x < (sectorStartRow + 3); x++)
+                {
+                    for (int y = sectorStartCol; y < (sectorStartCol + 3); y++)
                     {
-                        for (int y = sectorStartCol; y < (sectorStartCol + 3); y++)
+                        if (gridData[x, y] > 0 && arrSolutions.Contains(gridData[x, y]))
                         {
-                            if (gridData[x, y] > 0 && arrSolutions.Contains(gridData[x, y]))
-                            {
-                                arrSolutions.Remove(gridData[x, y]);
-                            }
+                            arrSolutions.Remove(gridData[x, y]);
                         }
                     }
+                }
 
 
 
@@ -323,6 +501,87 @@ namespace Sudoku
 
 
 
+        }
+
+        private void btnSolve_Click(object sender, EventArgs e)
+        {
+            //check for single solutions
+            
+            do{
+                foreach (CellInfo cInfo in cellAnalyses)
+                {
+                    if (cInfo.NumSolutions == 1)
+                    {
+                        gridData[cInfo.Cell.X, cInfo.Cell.Y] = cInfo.Solutions[0];
+                        populateGrid(gridData);
+                        
+                    }
+
+
+
+                }
+                cellAnalyses.Clear();
+                advancedAnalysis();
+
+                
+
+            }while(cellAnalyses.Where(ci => ci.NumSolutions == 1).Count() > 0);
+
+
+            //generate population
+            Random RN = new Random();
+            List<List<int>> population = new List<List<int>>();
+            for (int i = 0; i < 6; i++){
+                List<int> chromosome = new List<int>();
+                foreach(CellInfo cInfo in cellAnalyses.Where(ci => ci.NumSolutions > 1)){
+
+                    
+                    int pick = RN.Next(0, cInfo.NumSolutions);
+                    chromosome.Add(cInfo.Solutions[pick]);
+                }
+                population.Add(chromosome);
+            }
+
+            foreach (List<int> chromo in population)
+            {
+                foreach (int i in chromo)
+                {
+                    Debug.Write(i);
+                }
+                Debug.WriteLine("");
+            }
+            
+        }
+
+        private int checkErrors()
+        {
+            int numErrors = 0;
+
+            return numErrors;
+        }
+
+        private void AssessFitness(List<List<int>> pop)
+        {
+
+            foreach(List<int> chromo in pop){
+                int[,] assessGrid = gridData;
+
+                for (int x = 0; x < 9; x++)
+                {
+                    for (int y = 0; y < 9; y++)
+                    {
+                        if (assessGrid[x, y] == 0)
+                        {
+                            assessGrid[x,y] = chromo[0];
+                            chromo.RemoveAt(0);
+                        }
+                    }
+                }
+
+
+
+
+            }
         }
 
     }

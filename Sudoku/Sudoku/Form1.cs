@@ -176,8 +176,186 @@ namespace Sudoku
 
         private void basicAnalysis()
         {
-            lblBaseDifficulty.Text = "bleh";
+            lblNoGivens.Text = "bleh";
+
+            int countOfGivens = 0;
+            for (int x = 0; x < 9; x++)
+            {
+                for (int y = 0; y < 9; y++)
+                {
+                    if (gridData[x, y] > 0) { countOfGivens++; }
+                    
+
+
+                }
+            }
+
+
+            //simple count of the givens
+                if(countOfGivens > 32){
+                    lblNoGivens.Text = "easy";
+                }
+                else if(countOfGivens <= 32 && countOfGivens > 30){
+                    lblNoGivens.Text = "medium";
+                }
+                else if (countOfGivens <= 30 && countOfGivens >= 28)
+                {
+                    lblNoGivens.Text = "hard";
+                }
+                else if (countOfGivens < 28)
+                {
+                    lblNoGivens.Text = "very hard";
+                }
+
+
+            //distribution of givens
+
+
+                List<SectorInfo> sectorList = new List<SectorInfo>();
+                sectorList.Add(new SectorInfo(1, 0, 0));
+                sectorList.Add(new SectorInfo(2, 3, 0));
+                sectorList.Add(new SectorInfo(3, 6, 0));
+                sectorList.Add(new SectorInfo(4, 0, 3));
+                sectorList.Add(new SectorInfo(5, 3, 3));
+                sectorList.Add(new SectorInfo(6, 6, 3));
+                sectorList.Add(new SectorInfo(7, 0, 6));
+                sectorList.Add(new SectorInfo(8, 3, 6));
+                sectorList.Add(new SectorInfo(9, 6, 6));
+
+                foreach (SectorInfo secInfo in sectorList)
+                {
+
+                    for (int x = secInfo.StartPoint.X; x < (secInfo.StartPoint.X + 3); x++)
+                    {
+                        for (int y = secInfo.StartPoint.Y; y < (secInfo.StartPoint.Y + 3); y++)
+                        {
+                            if (gridData[x, y] > 0)
+                            {
+                                secInfo.GivensInSector++;
+                            }
+                        }
+                    }
+
+                }
+
+
+                List<int> givensBySector = new List<int>();
+                
+                foreach (SectorInfo secInfo in sectorList)
+                {
+
+                    givensBySector.Add(secInfo.GivensInSector);
+                }
+
+                int sectorsWithMoreThanOneGiven=0;
+                int sectorsWithOneGiven=0;
+                int sectorsWithNoGivens=0;
+
+                foreach (int given in givensBySector)
+                {
+                    if (given > 0)
+                    {
+                        if (given > 1)
+                        {
+                            sectorsWithMoreThanOneGiven++;
+                        }
+                        else
+                        {
+                            sectorsWithOneGiven++;
+                        }
+                    }
+                    else
+                    {
+                        sectorsWithNoGivens++;
+                    }
+                }
+
+                if (sectorsWithNoGivens > 0)
+                {
+                    lblDistroGivens.Text = "very hard";
+                }
+                else if (sectorsWithMoreThanOneGiven > 8)
+                {
+                    lblDistroGivens.Text = "easy";
+                }
+                else if (sectorsWithOneGiven > 1 && sectorsWithOneGiven < 3) {
+                    lblDistroGivens.Text = "medium";
+                }
+                else if (sectorsWithOneGiven >=3 )
+                {
+                    lblDistroGivens.Text = "hard";
+                }
+
+            //distribution of numbers
+
+            int[] numberDistro = new int[10];
+
+
+            for (int x = 0; x < 9; x++)
+            {
+                for (int y = 0; y < 9; y++)
+                {
+                    if (gridData[x, y] > 0) {
+                        numberDistro[gridData[x, y]]++;
+                    }
+
+
+
+                }
+            }
+
+
+            int appearsAtLeast3times=0;
+            int appearsTwice = 0;
+            int appearsOnlyOnce = 0;
+            
+            for (int i = 1; i < 10; i++)
+            {
+
+                if (numberDistro[i] > 3)
+                {
+                    appearsAtLeast3times++;
+                }
+                else if (numberDistro[i] == 2)
+                {
+                    appearsTwice++;
+                }
+                else if (numberDistro[i] == 1)
+                {
+                    appearsOnlyOnce++;
+                }
+
+            }
+
+            if (appearsAtLeast3times > 8)
+            {
+                lblDistroNumbers.Text = "easy";
+            }
+            else if (appearsOnlyOnce > 1)
+            {
+                lblDistroNumbers.Text = "very hard";
+            }
+            else if (appearsOnlyOnce == 1)
+            {
+                lblDistroNumbers.Text = "hard";
+            }
+            else
+            {
+                lblDistroNumbers.Text = "medium";
+            }
+
+                    
+
+                
+
+            
+
+
         }
+
+
+
+
 
         private void advancedAnalysis()
         {

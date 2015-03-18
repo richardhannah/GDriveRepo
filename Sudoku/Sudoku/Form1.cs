@@ -153,7 +153,7 @@ namespace Sudoku
             {
 
                 string contents = File.ReadAllText(fileSelect.FileName);
-                lblPuzzleName.Text = fileSelect.FileName;
+                lblPuzzleName.Text = Path.GetFileNameWithoutExtension(fileSelect.FileName);
                 Debug.WriteLine(contents);
                 gridData = JsonConvert.DeserializeObject<int[,]>(contents);
                 //JArray desArray = JsonConvert.DeserializeObject<JArray>(contents);
@@ -176,7 +176,7 @@ namespace Sudoku
 
         private void basicAnalysis()
         {
-            lblNoGivens.Text = "bleh";
+            int diffTotal = 0;
 
             int countOfGivens = 0;
             for (int x = 0; x < 9; x++)
@@ -194,17 +194,21 @@ namespace Sudoku
             //simple count of the givens
                 if(countOfGivens > 32){
                     lblNoGivens.Text = "easy";
+                    diffTotal += 1;
                 }
                 else if(countOfGivens <= 32 && countOfGivens > 30){
                     lblNoGivens.Text = "medium";
+                    diffTotal += 2;
                 }
                 else if (countOfGivens <= 30 && countOfGivens >= 28)
                 {
                     lblNoGivens.Text = "hard";
+                    diffTotal += 3;
                 }
                 else if (countOfGivens < 28)
                 {
                     lblNoGivens.Text = "very hard";
+                    diffTotal += 4;
                 }
 
 
@@ -273,17 +277,21 @@ namespace Sudoku
                 if (sectorsWithNoGivens > 0)
                 {
                     lblDistroGivens.Text = "very hard";
+                    diffTotal += 4;
                 }
                 else if (sectorsWithMoreThanOneGiven > 8)
                 {
                     lblDistroGivens.Text = "easy";
+                    diffTotal += 1;
                 }
                 else if (sectorsWithOneGiven > 1 && sectorsWithOneGiven < 3) {
                     lblDistroGivens.Text = "medium";
+                    diffTotal += 2;
                 }
                 else if (sectorsWithOneGiven >=3 )
                 {
                     lblDistroGivens.Text = "hard";
+                    diffTotal += 3;
                 }
 
             //distribution of numbers
@@ -330,19 +338,46 @@ namespace Sudoku
             if (appearsAtLeast3times > 8)
             {
                 lblDistroNumbers.Text = "easy";
+                diffTotal += 1;
             }
             else if (appearsOnlyOnce > 1)
             {
                 lblDistroNumbers.Text = "very hard";
+                diffTotal += 4;
             }
             else if (appearsOnlyOnce == 1)
             {
                 lblDistroNumbers.Text = "hard";
+                diffTotal += 3;
             }
             else
             {
                 lblDistroNumbers.Text = "medium";
+                diffTotal += 3;
             }
+
+
+            switch (diffTotal / 3)
+            {
+                case 1:
+                    lblModDiff.Text = "easy";
+
+                    break;
+                case 2:
+                    lblModDiff.Text = "medium";
+
+                    break;
+                case 3:
+                    lblModDiff.Text = "hard";
+
+                    break;
+                case 4:
+                    lblModDiff.Text = "very hard";
+
+                    break;
+            }
+
+            
 
                     
 
@@ -359,7 +394,7 @@ namespace Sudoku
 
         private void advancedAnalysis()
         {
-            lblModDiff.Text = "blah";
+            
 
             for (int x = 0; x < 9; x++)
             {
@@ -401,10 +436,31 @@ namespace Sudoku
             g.Clear(Color.White);
             Pen graphPen = new Pen(Color.Black, 1);
 
+            SolidBrush graphBrush = new SolidBrush(Color.Black);
+
+            //draw graph frame
+            int offset = 60;
+
+            for (int i = 0; i < 10; i++)
+            {
+                 g.DrawString(i.ToString(), DefaultFont, graphBrush, new PointF(i * 30 + offset, pnlGraph.Height - 40));
+            }
+
+            g.DrawString("number of solutions", DefaultFont, graphBrush, new PointF(150, pnlGraph.Height - 20));
+
+            for (int i = 0; i < 400; i++)
+            {
+                if (i % 50 == 0)
+                {
+                    g.DrawString((i/5).ToString(), DefaultFont, graphBrush, new PointF(30, pnlGraph.Height - 50 - i));
+                }
+            }
+
+            //draw graph
             for (int i = 0; i < 10; i++)
             {
                 //Debug.WriteLine("gdata {0}", graphData[i]);
-                g.DrawRectangle(graphPen, new Rectangle(10 + (30 * i), pnlGraph.Height - 10 - (graphData[i] * 5), 30, graphData[i] * 5));
+                g.DrawRectangle(graphPen, new Rectangle(50 + (30 * i), pnlGraph.Height - 50 - (graphData[i] * 5), 30, graphData[i] * 5));
 
             }
 
@@ -413,6 +469,9 @@ namespace Sudoku
             {
                 difficultyRating += i * graphData[i];
             }
+
+            
+
             lblDifficulty.Text = difficultyRating.ToString();
 
 

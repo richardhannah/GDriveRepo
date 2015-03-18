@@ -126,6 +126,8 @@
             this.label5 = new System.Windows.Forms.Label();
             this.lblDistroNumbers = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -702,7 +704,7 @@
             this.fileToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1149, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(959, 24);
             this.menuStrip1.TabIndex = 81;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -723,7 +725,7 @@
             // 
             // btnAnalyze
             // 
-            this.btnAnalyze.Location = new System.Drawing.Point(346, 89);
+            this.btnAnalyze.Location = new System.Drawing.Point(346, 124);
             this.btnAnalyze.Name = "btnAnalyze";
             this.btnAnalyze.Size = new System.Drawing.Size(75, 23);
             this.btnAnalyze.TabIndex = 82;
@@ -734,7 +736,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(318, 141);
+            this.label1.Location = new System.Drawing.Point(321, 210);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(68, 13);
             this.label1.TabIndex = 83;
@@ -743,7 +745,7 @@
             // lblNoGivens
             // 
             this.lblNoGivens.AutoSize = true;
-            this.lblNoGivens.Location = new System.Drawing.Point(442, 141);
+            this.lblNoGivens.Location = new System.Drawing.Point(439, 210);
             this.lblNoGivens.Name = "lblNoGivens";
             this.lblNoGivens.Size = new System.Drawing.Size(32, 13);
             this.lblNoGivens.TabIndex = 84;
@@ -752,16 +754,16 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(318, 239);
+            this.label3.Location = new System.Drawing.Point(323, 287);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(90, 13);
+            this.label3.Size = new System.Drawing.Size(98, 13);
             this.label3.TabIndex = 85;
-            this.label3.Text = "Modified Difficulty";
+            this.label3.Text = "Average of Ratings";
             // 
             // lblModDiff
             // 
             this.lblModDiff.AutoSize = true;
-            this.lblModDiff.Location = new System.Drawing.Point(442, 239);
+            this.lblModDiff.Location = new System.Drawing.Point(439, 287);
             this.lblModDiff.Name = "lblModDiff";
             this.lblModDiff.Size = new System.Drawing.Size(32, 13);
             this.lblModDiff.TabIndex = 86;
@@ -770,24 +772,25 @@
             // lblPuzzleName
             // 
             this.lblPuzzleName.AutoSize = true;
-            this.lblPuzzleName.Location = new System.Drawing.Point(12, 44);
+            this.lblPuzzleName.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPuzzleName.Location = new System.Drawing.Point(38, 66);
             this.lblPuzzleName.Name = "lblPuzzleName";
-            this.lblPuzzleName.Size = new System.Drawing.Size(66, 13);
+            this.lblPuzzleName.Size = new System.Drawing.Size(145, 25);
             this.lblPuzzleName.TabIndex = 87;
             this.lblPuzzleName.Text = "puzzle name";
             // 
             // pnlGraph
             // 
             this.pnlGraph.BackColor = System.Drawing.Color.White;
-            this.pnlGraph.Location = new System.Drawing.Point(513, 89);
+            this.pnlGraph.Location = new System.Drawing.Point(513, 66);
             this.pnlGraph.Name = "pnlGraph";
-            this.pnlGraph.Size = new System.Drawing.Size(315, 323);
+            this.pnlGraph.Size = new System.Drawing.Size(380, 430);
             this.pnlGraph.TabIndex = 88;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(828, 101);
+            this.label2.Location = new System.Drawing.Point(321, 356);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(81, 13);
             this.label2.TabIndex = 89;
@@ -796,14 +799,15 @@
             // lblDifficulty
             // 
             this.lblDifficulty.AutoSize = true;
-            this.lblDifficulty.Location = new System.Drawing.Point(828, 141);
+            this.lblDifficulty.Location = new System.Drawing.Point(408, 356);
             this.lblDifficulty.Name = "lblDifficulty";
-            this.lblDifficulty.Size = new System.Drawing.Size(0, 13);
+            this.lblDifficulty.Size = new System.Drawing.Size(32, 13);
             this.lblDifficulty.TabIndex = 90;
+            this.lblDifficulty.Text = "result";
             // 
             // btnSolve
             // 
-            this.btnSolve.Location = new System.Drawing.Point(346, 277);
+            this.btnSolve.Location = new System.Drawing.Point(346, 459);
             this.btnSolve.Name = "btnSolve";
             this.btnSolve.Size = new System.Drawing.Size(75, 23);
             this.btnSolve.TabIndex = 91;
@@ -814,7 +818,7 @@
             // lblDistroGivens
             // 
             this.lblDistroGivens.AutoSize = true;
-            this.lblDistroGivens.Location = new System.Drawing.Point(442, 166);
+            this.lblDistroGivens.Location = new System.Drawing.Point(439, 236);
             this.lblDistroGivens.Name = "lblDistroGivens";
             this.lblDistroGivens.Size = new System.Drawing.Size(32, 13);
             this.lblDistroGivens.TabIndex = 93;
@@ -823,7 +827,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(318, 166);
+            this.label5.Location = new System.Drawing.Point(321, 236);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(103, 13);
             this.label5.TabIndex = 92;
@@ -832,7 +836,7 @@
             // lblDistroNumbers
             // 
             this.lblDistroNumbers.AutoSize = true;
-            this.lblDistroNumbers.Location = new System.Drawing.Point(442, 195);
+            this.lblDistroNumbers.Location = new System.Drawing.Point(439, 262);
             this.lblDistroNumbers.Name = "lblDistroNumbers";
             this.lblDistroNumbers.Size = new System.Drawing.Size(32, 13);
             this.lblDistroNumbers.TabIndex = 95;
@@ -841,17 +845,39 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(318, 195);
+            this.label7.Location = new System.Drawing.Point(321, 262);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(112, 13);
             this.label7.TabIndex = 94;
             this.label7.Text = "distribution of numbers";
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(321, 179);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(64, 13);
+            this.label4.TabIndex = 96;
+            this.label4.Text = "Analysis 1";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(321, 326);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(64, 13);
+            this.label6.TabIndex = 97;
+            this.label6.Text = "Analysis 2";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1149, 522);
+            this.ClientSize = new System.Drawing.Size(959, 522);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.lblDistroNumbers);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.lblDistroGivens);
@@ -1058,6 +1084,8 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label lblDistroNumbers;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label6;
 
 
     }

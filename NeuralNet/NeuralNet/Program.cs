@@ -11,12 +11,16 @@ namespace NeuralNet
         static void Main(string[] args)
         {
 
-            Perceptron perceptron = new Perceptron(2.0);
+            Perceptron perceptron = new Perceptron(2);
+
+            perceptron.InputList.Add(new WeightedInput<int>(1));
+            Console.WriteLine(perceptron.InputList[0].Weight);
 
             while (true)
             {
                 Console.WriteLine("input value");
-                perceptron.Input = Convert.ToDouble(Console.ReadLine());
+                perceptron.InputList[0].Weight = Convert.ToInt32(Console.ReadLine());
+                perceptron.EvaluateInput();
 
             }
 

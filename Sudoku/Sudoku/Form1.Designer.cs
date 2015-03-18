@@ -121,6 +121,7 @@
             this.pnlGraph = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.lblDifficulty = new System.Windows.Forms.Label();
+            this.btnSolve = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -712,7 +713,7 @@
             // loadPuzzleToolStripMenuItem
             // 
             this.loadPuzzleToolStripMenuItem.Name = "loadPuzzleToolStripMenuItem";
-            this.loadPuzzleToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.loadPuzzleToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
             this.loadPuzzleToolStripMenuItem.Text = "Load Puzzle";
             this.loadPuzzleToolStripMenuItem.Click += new System.EventHandler(this.loadPuzzleToolStripMenuItem_Click);
             // 
@@ -796,11 +797,22 @@
             this.lblDifficulty.Size = new System.Drawing.Size(0, 13);
             this.lblDifficulty.TabIndex = 90;
             // 
+            // btnSolve
+            // 
+            this.btnSolve.Location = new System.Drawing.Point(346, 277);
+            this.btnSolve.Name = "btnSolve";
+            this.btnSolve.Size = new System.Drawing.Size(75, 23);
+            this.btnSolve.TabIndex = 91;
+            this.btnSolve.Text = "Solve";
+            this.btnSolve.UseVisualStyleBackColor = true;
+            this.btnSolve.Click += new System.EventHandler(this.btnSolve_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1149, 522);
+            this.Controls.Add(this.btnSolve);
             this.Controls.Add(this.lblDifficulty);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.pnlGraph);
@@ -997,6 +1009,7 @@
         private System.Windows.Forms.Panel pnlGraph;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblDifficulty;
+        private System.Windows.Forms.Button btnSolve;
 
 
     }

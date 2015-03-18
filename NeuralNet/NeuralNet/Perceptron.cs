@@ -18,33 +18,38 @@ namespace NeuralNet
         private double input;
 
 
-        public double Input
-        {
-            set
-            {
-                input = value;
-                EvaluateInput(input);
-            }
-        }
+        public List<WeightedInput<int>> InputList { get; set; }
+
+        
 
         public Perceptron(double cThreshold)
         {
             threshold = cThreshold;
+            InputList = new List<WeightedInput<int>>();
+            Console.WriteLine("perceptron created threshold is {0}", threshold);
 
         }
 
-        private void EvaluateInput(double cInput){
+        public void EvaluateInput(){
 
-            if (cInput >= threshold)
+            int sumOfInputs = 0;
+
+            foreach(WeightedInput<int> wInput in InputList){
+
+                sumOfInputs += wInput.InputVal + wInput.Weight;
+                Console.WriteLine("Running total = {0}", sumOfInputs);
+
+            }
+
+            Console.WriteLine("total sum of inputs {0}", sumOfInputs);
+            if (sumOfInputs > threshold)
             {
-                Console.WriteLine("Neuron Fires");
+                Console.WriteLine("neuron fires");
             }
             else
             {
-                Console.WriteLine("Neuron Inactive");
+                Console.WriteLine("neuron not fired");
             }
-
-
         }
 
 
